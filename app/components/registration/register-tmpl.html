@@ -1,0 +1,93 @@
+<div class="register-body">
+
+<h1 class="well header-well"><i class="fa fa-user-plus"></i> Registration Form</h1>
+
+<div class="col-lg-12 well">
+  <div class="row">
+
+    <form metod="post" ng-submit="vm.doRegister()">
+      <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-6 form-group">
+    				  <label>First Name</label>
+    					<input type="text" placeholder="Enter First Name Here.."
+              ng-model="vm.studentData.firstname" class="form-control">
+    				</div>
+
+            <div class="col-sm-6 form-group">
+  								<label>Last Name</label>
+  								<input type="text" placeholder="Enter Last Name Here.."
+                  ng-model="vm.studentData.lastname" class="form-control">
+  					</div>
+
+        </div>
+        <!-- end of row -->
+        <div class="form-group">
+							<label>Address</label>
+							<textarea placeholder="Enter Address Here.."
+							ng-model="vm.studentData.address"
+							rows="3" class="form-control"></textarea>
+				</div>
+        <!-- end form-group -->
+        <div class="row">
+							<div class="col-sm-4 form-group">
+								<label>City</label>
+								<input type="text" placeholder="Enter City Name Here.."
+                ng-model="vm.studentData.city" class="form-control">
+							</div>
+							<div class="col-sm-4 form-group">
+                <label>Date of Birth</label>
+                <input type="date" class="form-control"
+                ng-model="vm.studentData.dob"id="exampleInputDOB1" placeholder="Date of Birth">
+							</div>
+							<div class="col-sm-4 form-group">
+								<label>Zip Code</label>
+								<input type="text" placeholder="Enter Zip Code Here.."
+                ng-model="vm.studentData.zipcode" class="form-control">
+							</div>
+				</div>
+        <!-- end of row -->
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<label>Section</label>
+								<input type="text" placeholder="Enter Section Here.."
+                ng-model="vm.studentData.section" class="form-control">
+							</div>
+							<div class="col-sm-6 form-group">
+								<label>ID Number</label>
+								<input type="text" placeholder="Enter ID Number Here.."
+                ng-model="vm.studentData.id" class="form-control">
+							</div>
+						</div>
+            <!-- end of row -->
+  					<div class="form-group">
+  						<label>Phone Number</label>
+  						<input type="text" placeholder="Enter Phone Number Here.."
+              ng-model="vm.studentData.phone" class="form-control">
+  					</div>
+            <!-- end of form-group -->
+  					<div class="form-group">
+  						<label>Email Address</label>
+  						<input type="text" placeholder="Enter Email Address Here.."
+              ng-model="vm.studentData.email" class="form-control">
+  					</div>
+            <!-- end of form-group -->
+            <div class="form-group">
+              <label>Sex</label> <br>
+              <input type="radio" name="gender"
+              ng-model="vm.studentData.sex" value="male"> Male
+              <input type="radio" name="gender"
+              ng-model="vm.studentData.sex" value="female" > Female
+              <br>
+  					</div>
+            <!-- end of form-group -->
+            <button type="submit" class="btn btn-lg btn-info">Submit</button>
+      </div>
+      <!-- end of col-sm-12 -->
+    </form>
+  </div>
+  <!-- end of row -->
+</div>
+<!-- end of col-lg-12  -->
+
+</div>

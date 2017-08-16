@@ -1,0 +1,77 @@
+@import "mixins";
+
+.register-body{
+  max-width: 940px;
+  margin-left: 20px;
+
+  @include mQ(1024px) {
+    max-width: 750px;
+    margin-left: 10px;
+  }
+  @include mQ(768px) {
+    max-width: 700px;
+    margin-left: 37px;
+  }
+  @include mQ(425px) {
+    max-width: 300px;
+    margin-left: 65px;
+  }
+  @include mQ(375px) {
+    max-width: 250px;
+    margin-left: 70px;
+  }
+  @include mQ(320px) {
+    max-width: 250px;
+    margin-left: 45px;
+  }
+}
+// .container {
+//   @include mQ(1024px) {
+//     margin-left: 50px;
+//   }
+//   @include mQ(768px) {
+//     max-width: 730px;
+//   }
+//   @include mQ(425px) {
+//     min-width: 300px;
+//     margin-left: 20px;
+//   }
+//   @include mQ(320px) {
+//     min-width: 250px;
+//     margin-left: 20px;
+//   }
+// }
+.well {
+  border-radius: 0;
+  font-family: Open Sans;
+  background-color: #F1F7EA;
+}
+.header-well {
+  text-align: center;
+  i{
+    color: #4CAF50;
+  }
+}
+.btn-info{
+  border-radius: 0px;
+  padding: 8px 16px;
+}
+
+// @media (min-width: 1024px) {
+//   .container {
+//     max-width: 800px;
+//   }
+// }
+//
+// @media (min-width: 768px) {
+//   .container {
+//     max-width: 658px;
+//     margin-left: 75px;
+//   }
+// }
+// @media (min-width: 425px) {
+//   .container {
+//     max-width: 300px;
+//     margin-left: 80px;
+//   }
+// }

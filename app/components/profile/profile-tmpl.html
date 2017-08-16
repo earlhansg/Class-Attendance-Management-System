@@ -1,0 +1,114 @@
+<div id="profile-body">
+  <header>
+    <nav class="navbar navbar-default color-header navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle no-border" data-toggle="collapse" data-target="#navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <!-- end nav-toggle -->
+          <i class="fa fa-clock-o"></i>
+        </div>
+        <!-- //end navbar-header -->
+        <div id="navbar-collapse" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a id="user-profile" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="http://lorempixel.com/100/100/people/9/" class="img-responsive img-thumbnail img-circle">
+                <small class="profile-username">Earl Hans</small>
+              </a>
+                <!-- <img src="../../../public/img/logo.png" class="img-responsive img-thumbnail img-circle">
+                Username</a> -->
+              <ul class="dropdown-menu dropdown-block" role="menu">
+                <li><a href="#"><small>Teacher</small></a></li>
+                <li><a href="#" ><small>Settings</small></a></li>
+                <li><a href="#"><small>Logout</small></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+   <!-- end navbar-collapse -->
+      </div>
+    <!-- container-fluid -->
+   </nav>
+  </header>
+</div>
+<!-- profile-body -->
+<!-- <div id="wrapper">
+  <div id="sidebar-wrapper">
+    <aside id="sidebar">
+      <ul id="sidemenu" class="sidebar-nav">
+        <li>
+          <a href="#">
+            <span class="sidebar-icon"><i class="fa fa-dashboard"></i></span>
+            <span class="sidebar-title">Student</span>
+            <b class="caret"></b>
+          </a>
+          <ul id="submenu-2" class="panel-collapse collapse panel-switch" role="menu">
+            <li><a href="#"><i class="fa fa-caret-right"></i>Users</a></li>
+            <li><a href="#"><i class="fa fa-caret-right"></i>Roles</a></li>
+          </ul> -->
+          <!-- submenu-2 -->
+        <!-- </li>
+        <li>
+          <a href="#">
+            <span class="sidebar-icon"><i class="fa fa-dashboard"></i></span>
+            <span class="sidebar-title">Section</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="sidebar-icon"><i class="fa fa-dashboard"></i></span>
+            <span class="sidebar-title">Class Attendance</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+  </div> -->
+  <!-- side-bar -->
+<!-- </div> -->
+<!-- wrapper -->
+<div id="wrapper">
+        <div id="sidebar-wrapper">
+            <aside id="sidebar">
+                <ul id="sidemenu" class="sidebar-nav">
+                    <li>
+                        <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
+                            <span class="sidebar-icon"><i class="fa fa-users"></i></span>
+                            <span class="sidebar-title">Student</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul id="submenu-2" class="panel-collapse collapse panel-switch" role="menu">
+                            <li ui-sref=".register"><a href=""><i class="fa fa-caret-right"></i>Add Student</a></li>
+                            <li ui-sref=".student"><a href=""><i class="fa fa-caret-right"></i>View Student</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-3">
+                            <span class="sidebar-icon"><i class="fa fa-newspaper-o"></i></span>
+                            <span class="sidebar-title">Section</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul id="submenu-3" class="panel-collapse collapse panel-switch" role="menu">
+                            <li ui-sref=".section"><a href="#"><i class="fa fa-caret-right"></i>View Section</a></li>
+                            <li ui-sref=".section-add"><a href="#"><i class="fa fa-caret-right"></i>Add Section</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="sidebar-icon"><i class="fa fa-database"></i></span>
+                            <span class="sidebar-title">Class Attendance</span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+
+<div class="container">
+
+  <ui-view></ui-view>
+
+</div>

@@ -1,0 +1,27 @@
+<div class="login-body">
+  <div class="container margin-top">
+  <div class="login-form">
+    <div class="login-panel panel-default">
+      <div class="login-heading">
+        <i class="fa fa-clock-o"></i>
+        <small class="info-logo"> Student Class Attendance</small>
+      </div>
+      <div class="login-body">
+        <form name="loginForm" ng-submit="vm.doLogin()">
+          <input type="text" class="" placeholder="Username"
+          ng-model="vm.loginData.username" required autofocus>
+          <input type="password" class="" placeholder="Password"
+          ng-model="vm.loginData.password" required>
+          <span class="label label-danger"
+          ng-show="vm.processing == true">username and password do not match
+          </span><br>
+          <button type="submit" name="button" class="login-button">LOGIN</button>
+        </form>
+
+        <small class="forget-password">Forget Password?</small>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>

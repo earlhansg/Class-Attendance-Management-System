@@ -1,0 +1,220 @@
+@import "mixins";
+$fontHeader:Josefin Slab;
+$colorWhite:#ffffff;
+
+.icon-bar{
+    color: $colorWhite;
+  }//icon-bar
+
+.fa-clock-o {
+    font-size: 30px;
+    color: $colorWhite;
+    margin: 10px 0px 0px 5px;
+}//fa-clock-o
+
+.color-header{
+  background-color:  #0B2140;
+}//color-header
+
+.no-border {
+  border: none;
+}//no-border
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+}//navbar-fixed-top
+
+#user-profile {
+  height: 50px;
+  padding-top: 15px;
+  padding-left: 58px;
+  img {
+    height: 45px;
+    width: 45px;
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    padding: 1px;
+
+  }
+  img
+  .profile-username{
+    color: $colorWhite;
+  }
+}
+
+
+
+#wrapper {
+    padding-top: 50px;
+    padding-left: 0;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    @media (min-width: 992px) {
+            padding-left: 225px;
+    }
+}//#wrapper
+
+
+#sidebar-wrapper {
+    // border-right: 1px solid #e7e7e7;
+    // border-right: 1px solid #e7e7e7;
+    z-index: 1000;
+    position: fixed;
+    left: 225px;
+    width: 0;
+    height: 100%;
+    margin-left: -225px;
+    overflow-y: auto;
+    background: #92bce0;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+
+    @media (min-width: 992px) {
+            width: 225px;
+    }
+    .sidebar-nav {
+        position: absolute;
+        top: 0;
+        width: 225px;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+            text-indent: 0;
+            line-height: 45px;
+            a {
+                display: block;
+                text-decoration: none;
+                color: #428bca;
+                .caret {
+                  position: absolute;
+                  right: 23px;
+                  top: auto;
+                  margin-top: 20px;
+                }//caret
+            }//a
+        }//li
+
+
+    .panel-collapse{
+      list-style: none;
+      -moz-padding-start: 0;
+      -webkit-padding-start: 0;
+      -khtml-padding-start: 0;
+      -o-padding-start: 0;
+      padding-start: 0;
+      padding: 0;
+      li{
+        text-indent: 15px;
+        i{
+          margin-right: 10px;
+        }
+      }
+    }
+
+    }//.sidebar-nav
+
+    .sidebar-icon{
+      width: 45px;
+      height: 45px;
+      font-size: 14px;
+      padding: 0 2px;
+      display: inline-block;
+      text-indent: 7px;
+      margin-right: 10px;
+      color: #fff;
+      // float: left;
+    }//sidebar-icon
+
+}//sidebar-wrapper
+
+@media (max-width: 992px) {
+    #wrapper #sidebar-wrapper {
+        width: 45px;
+    }
+    #wrapper #sidebar-wrapper #sidebar #sidemenu li ul {
+        position: fixed;
+        left: 45px;
+        margin-top: -45px;
+        z-index: 1000;
+        width: 200px;
+        height: 0;
+    }
+}
+
+.sidebar-nav li:first-child a {
+    background: #92bce0 !important;
+    color: #fff !important;
+}
+
+.sidebar-nav li:nth-child(2) a {
+    background: #6aa3d5 !important;
+    color: #fff !important;
+}
+
+.sidebar-nav li:nth-child(3) a {
+    background: #428bca !important;
+    color: #fff !important;
+}
+
+// .table-responsive{
+//   margin-top: 50px;
+//
+//   @include mQ(1024px) {
+//    margin-left: 0px;
+//   }
+//   @include mQ(768px) {
+//   margin-left: 50px;
+//   }
+//   @include mQ(425px) {
+//   margin-left: 60px;
+//   width: 80%;
+//   }
+//   @include mQ(375px) {
+//   margin-left: 45px;
+//   width: 85%;
+//   }
+//   @include mQ(320px) {
+//   margin-left: 40px;
+//   width: 85%;
+//   }
+//   .table>thead>tr>th{
+//     @include mQ(375px) {
+//       padding: 2px;
+//       // margin-left: 20px;
+//       width: 83%;
+//     }
+//   }
+//   .table>thead>tr>th{
+//     @include mQ(325px) {
+//       padding: 0px;
+//
+//     }
+//   }
+//   .table {
+//     width: 85%;
+//
+//     @include mQ(1024px) {
+//      width: 80%;
+//     }
+//
+//     @include mQ(768px) {
+//      width: 100%;
+//     }
+//
+//     @include mQ(425px) {
+//       font-size: 10px;
+//     }
+//   }
+// }//table-responsive
+//
+// .table-border{
+//   border: .5px solid #ddd;
+// }

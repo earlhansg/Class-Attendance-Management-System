@@ -1,0 +1,81 @@
+@import "mixins";
+
+$fontHeader:Josefin Slab;
+$colorWhite:#ffffff;
+
+menu {
+  margin: 0;
+  padding: 0;
+
+  .fa-clock-o{
+    color: $colorWhite;
+    margin: 20px 0px 0px 20px;
+    font-size: 80px;
+    position: fixed;
+
+      @include mQ(425px) {
+        font-size: 70px;
+      }
+      @include mQ(375px) {
+        font-size: 65px;
+      }
+      @include mQ(320px) {
+        font-size: 60px;
+      }
+  } //end fa-clock-o
+}//end menu
+.menu-body{
+  width: 100%;
+  background-color: #0B2140;
+
+}
+.margin-top {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+.button-body{
+  margin: 0 auto;
+  // max-width: 500px;
+  font-family: $fontHeader;
+  @include mQ(425px) {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+.menu-button {
+  height: 100px;
+  padding: 10px;
+  font-size: 30px;
+  margin: 5px 10px 5px 10px;
+  color: $colorWhite;
+  background-color: #2A466F;
+  border: none;
+  font-weight: 400;
+
+    @include mQ(425px) {
+      height: 80px;
+      padding: 7px;
+      font-size: 20px;
+      margin: 5px 0px 5px 0px;
+    }
+    @include mQ(375px) {
+      height: 80px;
+      padding: 2px;
+      font-size: 20px;
+      margin: 5px 0px 5px 0px;
+    }
+    @include mQ(320px) {
+      height: 80px;
+      padding: 3px;
+      font-size: 17px;
+      margin: 5px 0px 5px 0px;
+    }
+
+  &:hover{
+    background-color: #0F3362;
+  }//end hover
+
+}//end menu-button

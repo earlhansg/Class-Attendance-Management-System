@@ -1,0 +1,125 @@
+@import "mixins";
+
+$fontHeader:Josefin Slab;
+$colorWhite:#ffffff;
+.login-body{
+  width: 100%;
+  background-color: #3D5572;
+}
+.margin-top {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.login-form{
+  margin: 0 auto;
+  max-width: 400px;
+  font-family: $fontHeader;
+}
+.login-panel {
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+
+  .login-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    // background-color:#714D74;
+    background-color:#0B2140;
+
+      .fa-clock-o{
+        font-size: 50px;
+        color: #ffffff;
+      }
+      .info-logo{
+        margin-left: 5px;
+        font-size: 20px;
+        color:#ffffff;
+        @include mQ(320px) {
+        margin-left: 0;
+        font-size: 15px;
+        }
+      }
+    }
+
+  .login-body{
+    color: #333;
+    background-color:#0B2140;
+    border-color: #ddd;
+    text-align: center;
+    position: relative;
+
+    form{
+      // margin-top: 10px;
+      font-size: 18px;
+
+      input{
+        margin-top: 20px;
+        min-height: 38px;
+        min-width: 320px;
+        background-color:$colorWhite;
+
+        @include mQ(375px) {
+          margin-top: 20px;
+          min-height: 35px;
+          min-width: 320px;
+          background-color:$colorWhite;
+        }
+        @include mQ(320px) {
+          margin-top: 20px;
+          min-height: 35px;
+          min-width: 250px;
+          background-color:$colorWhite;
+          // background-color: red;
+        }
+
+      }//input
+    }//form
+
+  .login-button{
+    margin: 20px 0 15px 0;
+    // background-color: #46234A;
+    background-color: #193A69;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    width: 80px;
+    height: 40px;
+    border: 0;
+
+    @include mQ(320px) {
+      width: 70px;
+      height: 30px;
+    }
+
+  }//login-button
+
+  .forget-password{
+    position: absolute;
+    margin-top: 7px;
+    margin-left: -200px;
+    cursor: pointer;
+    color: #808080;
+    font-size: 13px;
+    font-weight: 200;
+    &:hover{
+      text-decoration: underline;
+      color: $colorWhite;
+    }
+    @include mQ(375px) {
+      margin-top: 7px;
+      margin-left: -200px;
+      font-size: 10px;
+    }
+    @include mQ(320px) {
+      margin-top: 4px;
+      margin-left: -160px;
+      font-size: 10px;
+    }
+  }//forget-password
+
+  }//login-body
+
+}

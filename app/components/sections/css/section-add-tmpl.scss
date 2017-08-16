@@ -1,0 +1,53 @@
+@import "mixins";
+$colorWhite:#ffffff;
+
+.table-responsive{
+
+  .header-section{
+    background-color: #2D8F6B;
+    color:$colorWhite;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .body-section{
+    background-color:#F2F0F2;
+  }
+}
+// .th-header{
+//   width: 100px;
+// }
+.th-header2{
+  width: 80px;
+}
+.border {
+  border-left: 1px solid #ddd;
+}
+.add-section {
+  background-color: #61BADF;
+  border-style: none;
+  color:$colorWhite;
+  padding: 3px;
+  @include mQ(375px) {
+    padding: 2px;
+    margin-left: 5px;
+  }
+}
+.table-addsection{
+  font-family: sans-serif;
+  margin: 20px auto;
+  width: 750px;
+  @include mQ(768px) {
+    width: 600px;
+  }
+  @include mQ(425px) {
+    border-style: none;
+    margin-left: 43px;
+    width: 350px;
+  }
+  @include mQ(375px) {
+    border-style: none;
+    // width: 500px;
+    margin-left: 30px;
+  }
+
+}
