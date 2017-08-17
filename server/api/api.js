@@ -169,6 +169,18 @@ api.get('/users', function(req, res) {
   });
 });
 
+api.get('/allStudents/:id', function(req, res){
+  var createdId = req.params.id;
+
+  Student.find({'created': createdId}, function(Students, err){
+    console.log(req.body.created);
+      if(err){
+        res.send(err);
+        return;
+      }
+      res.json(Students);
+  });
+});
 
 
 

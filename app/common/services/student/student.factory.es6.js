@@ -1,13 +1,15 @@
 
 
-let studentFactory = function ($http, $q){
+let studentFactory = function ($http){
   const studentFactory = {};
 
   let register = (studentData) => {
     return $http.post('/api/register', studentData);
   };
-
-  return { register };
+  let allStudents = (id) => {
+    return $http.get('api/allStudents/' + id);
+  };
+  return { register, allStudents };
 };
 
 
