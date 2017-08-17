@@ -7,7 +7,7 @@ class AppController {
     // };
     $rootScope.$on('$stateChangeStart', function() {
         vm.loggedIn = Auth.isLoggedIn();
-        console.log('login');
+        console.log('registration');
 
         console.log("enter change route");
       });
