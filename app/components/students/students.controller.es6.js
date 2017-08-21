@@ -12,7 +12,6 @@ class StudentController {
 
 
     vm.init = function() {
-      console.log('earl');
 
       StudentFactory.allStudents(id)
       .then(function(response){

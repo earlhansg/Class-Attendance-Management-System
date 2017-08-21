@@ -2,9 +2,9 @@
 <div class="row">
   <div id="select-section">
     <select class="selectpicker" multiple title="Select Section ...">
-      <option>BSIT-R5</option>
-      <option>BSIT-R6</option>
-      <option>BSIT-R7</option>
+      <option ng-repeat="section in vm.message">{{section.sectioncode}}</option>
+      <!-- <option>BSIT-R6</option>
+      <option>BSIT-R7</option> -->
     </select>
   </div>
 </div>

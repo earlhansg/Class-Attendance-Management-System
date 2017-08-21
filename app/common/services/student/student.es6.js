@@ -1,10 +1,10 @@
 import angular from 'angular';
 import studentFactory from './student.factory.es6';
 
-let studentServiceModuel = angular.module('studentService',[])
+let studentServiceModule = angular.module('studentService',[])
 
 .factory('StudentFactory', studentFactory);
 
 
 
-export default studentServiceModuel;
+export default studentServiceModule;

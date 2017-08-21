@@ -51,3 +51,31 @@ $colorWhite:#ffffff;
   }
 
 }
+.no-border {
+  border: none;
+  border-radius: 0;
+}
+.modal-custom {
+  width: 350px;
+  border-radius: 0;
+  text-align: center;
+  @include mQ(375px) {
+    width: 200px;
+    margin-left: 90px;
+  }
+  @include mQ(425px) {
+    margin-left: 50px;
+  }
+  // margin-left: 150px;
+}
+.input-width {
+  width: 50%;
+  border-radius: 0;
+  display: block;
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+  // margin-left: 40px;
+}

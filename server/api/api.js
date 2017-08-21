@@ -1,5 +1,6 @@
 var User = require ('../models/user');
 var Student = require('../models/student');
+var Section = require('../models/section');
 var config = require ('../config/config');
 // var secretKey = config.secretKey;
 var jwt = require ('jsonwebtoken');
@@ -86,6 +87,33 @@ module.exports = function(app, express){
     });
   });
 
+  api.post('/addSection', function(req, res){
+    var section = new Section ({
+      created: req.body.created,
+      sectioncode: req.body.sectioncode
+    });
+    section.save(function(err, data){
+      if(err){
+        res.send(err);
+        return;
+      }
+      res.json({
+        success: true,
+        message: 'Section has been created',
+        data: data
+      });
+    });
+  });
+
+api.delete('/section/:id', function(req, res){
+
+  Section.findByIdAndRemove({
+    _id: req.params.id
+  })
+  .then(function(section){
+    res.send(section);
+  });
+});
   api.post('/authenticate', function(req, res){
       //find user
       User.findOne({
@@ -121,6 +149,8 @@ module.exports = function(app, express){
         }
       });
     });
+
+
 
     // api.use(function(req, res, next) {
     //
@@ -182,7 +212,41 @@ api.get('/allStudents/:id', function(req, res){
   });
 });
 
+api.get('/allSections/:id', function(req, res){
+  var createdId = req.params.id;
 
+  Section.find({'created': createdId}, function(Sections, err){
+    if(err){
+      res.send(err);
+      return;
+    }
+    res.json(Sections);
+  });
+});
+
+api.put('/updateSection/:id', function(req, res) {
+  Section.findOneAndUpdate({
+    _id: req.params.id
+  },
+  {
+    $set:{
+      sectioncode: req.body.sectioncode
+    }
+  },
+  {
+    upsert: false
+  },
+  function(err, newSection) {
+    if(err){
+      console.log('error occured');
+    }
+    else{
+      res.send(newSection);
+    }
+  }
+
+  );
+});
 
   // api.get('/me', function(req, res){
   //   res.json(req.decoded);
