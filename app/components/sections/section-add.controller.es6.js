@@ -1,12 +1,11 @@
 
 class SectionAddController {
-  constructor(SectionFactory, $window){
+  constructor(SectionFactory, $window, $scope){
     var vm = this;
-
     // getting data in SessionStorage
     vm.user = JSON.parse($window.sessionStorage.getItem('response'));
     var id = vm.user.data.message.id;
-    vm.sections = [];
+
 
     vm.addSection = function(){
 
@@ -26,26 +25,47 @@ class SectionAddController {
         });
     };
 
+
+
     vm.selectEdit = function(section){
-      vm.section = [];
-      vm.updateStat = true;
-      console.log(section);
-      vm.section._id = section._id;
-      vm.section.sectioncode = section.sectioncode;
+      vm.modalData = {};
+      // vm.updateStat = true;
+      vm.modalData._id = section._id;
+      vm.modalData.created = id;
+      vm.modalData.sectioncode = section.sectioncode;
     };
+
+
+    vm.updateSection = function(){
+      SectionFactory.editSection(vm.modalData)
+      .then(function (response) {
+        if(response.status == 200){
+          console.log("success");
+          vm.sections = vm.sections.map(function(data){
+            return data._id == vm.modalData._id ? vm.modalData: data;
+          });
+        }
+      });
+    };
+
+
 
     vm.init = function() {
 
       SectionFactory.allSections(id)
       .then(function(response){
-        vm.Sections = {};
+        vm.sectionData = {};
         vm.sections = response.data;
       });
     };
 
     vm.init();
 
+
+
+
   }
+
 }
 
 export default SectionAddController;

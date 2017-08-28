@@ -105,7 +105,11 @@ module.exports = function(app, express){
     });
   });
 
-api.delete('/section/:id', function(req, res){
+  // api.put('/updateSection/:id', function(req, res){
+  //   console.log('update section', req.body, req.params.id);
+  // });
+
+api.delete('/deleteSection/:id', function(req, res){
 
   Section.findByIdAndRemove({
     _id: req.params.id
@@ -203,7 +207,7 @@ api.get('/allStudents/:id', function(req, res){
   var createdId = req.params.id;
 
   Student.find({'created': createdId}, function(Students, err){
-    console.log(req.body.created);
+
       if(err){
         res.send(err);
         return;
@@ -213,6 +217,7 @@ api.get('/allStudents/:id', function(req, res){
 });
 
 api.get('/allSections/:id', function(req, res){
+
   var createdId = req.params.id;
 
   Section.find({'created': createdId}, function(Sections, err){
@@ -225,7 +230,12 @@ api.get('/allSections/:id', function(req, res){
 });
 
 api.put('/updateSection/:id', function(req, res) {
-  Section.findOneAndUpdate({
+  console.log('earl');
+  console.log(req.body);
+  console.log(req.params);
+
+  Section.findByIdAndUpdate(
+  {
     _id: req.params.id
   },
   {

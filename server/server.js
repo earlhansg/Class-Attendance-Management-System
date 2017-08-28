@@ -24,8 +24,17 @@ app.set('superSecret', config.secret); //secret variable
 
 // configuration bodyParser and Morgan
 app.use(logger('dev'));
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// app.use(require('connect').bodyParser());
+// app.use(express.bodyParser());
+
+
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));

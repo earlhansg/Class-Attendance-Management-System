@@ -1,9 +1,10 @@
+
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 import sectionAddComponent from './sectionAdd.component.es6';
 
 let sectionsAddModule = angular.module('sectionsAdd',[
-uiRouter
+  uiRouter
 ])
 
 .config(($stateProvider, $locationProvider) => {
@@ -15,6 +16,5 @@ uiRouter
     $locationProvider.html5Mode(true);
 })
 .component('sectionAdd', sectionAddComponent);
-
 
 export default sectionsAddModule;

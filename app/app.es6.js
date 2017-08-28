@@ -19,7 +19,7 @@ import Common from './common/common.es6';
 angular.module('app', [
   uiRouter,
   Components.name,
-  Common.name
+  Common.name,
 ])
   .directive('app', AppComponent)
   .controller('AppController', AppController)
