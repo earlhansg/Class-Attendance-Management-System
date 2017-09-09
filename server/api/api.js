@@ -1,6 +1,7 @@
 var User = require ('../models/user');
 var Student = require('../models/student');
 var Section = require('../models/section');
+var Attendance = require ('../models/attendance');
 var config = require ('../config/config');
 // var secretKey = config.secretKey;
 var jwt = require ('jsonwebtoken');
@@ -155,38 +156,27 @@ api.delete('/deleteSection/:id', function(req, res){
     });
 
 
+// get sections
+api.get('/sections', function(req, res){
+  Section.find({}, function(err, sections){
+    res.json(sections);
+  });
+});
+// get students by section
+api.get('/studentsbySection/:section', function(req, res){
+  var section =  req.params.section;
 
-    // api.use(function(req, res, next) {
-    //
-    //   // check header or url parameters or post parameters for token
-    //   var token = req.body.token || req.query.token || req.headers['x-access-token'];
-    //
-    //   // decode token
-    //   if (token) {
-    //
-    //     // verifies secret and checks exp
-    //     jwt.verify(token, app.get('superSecret'), function(err, decoded) {
-    //       if (err) {
-    //         return res.json({ success: false, message: 'Failed to authenticate token.' });
-    //       } else {
-    //         // if everything is good, save to request for use in other routes
-    //         req.decoded = decoded;
-    //         next();
-    //       }
-    //     });
-    //
-    //   } else {
-    //
-    //     // if there is no token
-    //     // return an error
-    //     return res.status(403).send({
-    //         success: false,
-    //         message: 'No token provided.'
-    //     });
-    //
-    //   }
-    // });
-    //
+  Student.find({ "section": section }, function(sectionData, err){
+    console.log(section);
+      if(err){
+        res.send(err);
+        return;
+      }
+      res.json(sectionData);
+
+  });
+
+});
 
 
 
@@ -255,12 +245,67 @@ api.put('/updateSection/:id', function(req, res) {
     }
   }
 
-  );
+);
 });
+
+//Attendance
+api.post('/attendance', function(req,res){
+  console.log(req.body.students);
+    var attendance = new Attendance ({
+      date : req.body.date,
+      students: req.body.students
+    });
+
+
+    attendance.save(function(err, data){
+      console.log();
+      if(err){
+        res.send(err);
+        return;
+      }
+      res.json({
+        success: true,
+        data: data
+      });
+
+    });
+  });
+
+// api.use(function(req, res, next) {
+//
+//   // check header or url parameters or post parameters for token
+//   var token = req.body.token || req.query.token || req.headers['x-access-token'];
+//
+//   // decode token
+//   if (token) {
+//
+//     // verifies secret and checks exp
+//     jwt.verify(token, app.get('superSecret'), function(err, decoded) {
+//       if (err) {
+//         return res.json({ success: false, message: 'Failed to authenticate token.' });
+//       } else {
+//         // if everything is good, save to request for use in other routes
+//         req.decoded = decoded;
+//         next();
+//       }
+//     });
+//
+//   } else {
+//
+//     // if there is no token
+//     // return an error
+//     return res.status(403).send({
+//         success: false,
+//         message: 'No token provided.'
+//     });
+//
+//   }
+// });
+//
 
   // api.get('/me', function(req, res){
   //   res.json(req.decoded);
   //
   // });
-      return api;
+  return api;
 };

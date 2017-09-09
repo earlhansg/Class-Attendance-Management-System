@@ -31,7 +31,19 @@ let sectionFactory = function ($http){
 
   };
 
-  return { addSection, allSections, deleteSection, editSection };
+  let getSections = () => {
+    const url = `${API_URL}/sections`;
+
+    return $http.get(url);
+  };
+
+  let getStudentbySection = (section) => {
+    const url = `${API_URL}/studentsbySection/${section}`;
+
+    return $http.get(url);
+  };
+
+  return { addSection, allSections, deleteSection, editSection, getSections, getStudentbySection };
 };
 
 export default sectionFactory;

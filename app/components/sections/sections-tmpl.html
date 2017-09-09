@@ -1,11 +1,13 @@
 
 <div class="row">
   <div id="select-section">
-    <select class="selectpicker" multiple title="Select Section ...">
-      <option ng-repeat="section in vm.message">{{section.sectioncode}}</option>
-      <!-- <option>BSIT-R6</option>
-      <option>BSIT-R7</option> -->
-    </select>
+      <select class="styled-select slate" ng-model="vm.sectioncode">
+        <option
+        ng-repeat="section in vm.dataSections">{{section.sectioncode}}</option>
+      </select>
+    <button class="btn-go"
+    ng-click="vm.getStudentbySection(vm.sectioncode)">Go <i class="fa fa-check-square-o"></i>
+    </button>
   </div>
 </div>
 
@@ -14,16 +16,16 @@
       <thead>
           <tr class="row-color table-header">
             <th class="center">Student</th>
-            <th class="center">December 26, 2017</th>
+            <th class="center">{{ vm.currDate | date : "fullDate"}} </th>
           </tr>
         </thead>
-        <tbody class="table-body">
-          <td class="student-data"><small class="name-data">Earl Hans Genoso</small></td>
+        <tbody class="table-body" ng-repeat="student in vm.studentsbySection">
+          <td class="student-data"><small class="name-data"> {{student.firstname}} {{student.lastname}} </small></td>
           <td class="center">
-            <input type="radio" name="" value="">
+            <input type="checkbox" ng-model="vm.selectedList[student._id]" ng-value="$index" />
           </td>
         </tbody>
-        <tbody class="table-body">
+        <!-- <tbody class="table-body">
           <td class="student-data"><small class="name-data">Kristy Mae Almuete</small></td>
           <td class="center">
             <input type="radio" name="" value="">
@@ -40,7 +42,9 @@
           <td class="center">
             <input type="radio" name="" value="">
           </td>
-        </tbody>
+        </tbody> -->
     </table>
 </div>
-<button type="button" name="button" class="submit"><span class="fa fa-check"></span> Submit</button>
+<button type="button" ng-click="vm.checkAttendance()"
+name="button" class="submit"><span class="fa fa-check"></span> Submit
+</button>
