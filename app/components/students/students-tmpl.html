@@ -10,20 +10,52 @@
       <thead>
           <tr class="row-color">
             <th class="table-border">ID No.</th>
-            <th class="table-border">Student</th>
-            <th class="table-border">Address</th>
+            <th class="table-border">Firstname</th>
+            <th class="table-border">Lastname</th>
             <th class="table-border">Sex</th>
             <th class="table-border">Section</th>
           </tr>
         </thead>
 
-        <tbody class="body-color" ng-repeat="student in vm.message | filter:searchStudent">
+        <!-- <tbody class="body-color" ng-repeat="student in vm.message | filter:searchStudent">
           <td class="table-border">{{student.id}}</td>
           <td class="table-border">{{student.firstname}} {{student.lastname}}</td>
           <td class="table-border">{{student.address}}</td>
           <td class="table-border">{{student.sex}}</td>
           <td class="table-border">{{student.section}}</td>
+        </tbody> -->
+
+        <tbody class="body-color" ng-repeat="student in vm.students | filter:searchStudent" ng-init="vm.isDisabled[student.id] = true">
+          <td class="table-border">
+            <input type="text" class="form-control" ng-disabled="true"
+             ng-model="student.id" required/></td>
+          </td>
+          <td class="table-border">
+            <input type="text" class="form-control" ng-disabled="vm.isDisabled[student.id]"
+             ng-model="student.firstname" required/></td>
+          </td>
+          <td class="table-border">
+            <input type="text" class="form-control" ng-disabled="vm.isDisabled[student.id]"
+             ng-model="student.lastname" required/></td>
+          </td>
+          <td class="table-border">
+            <input type="text" class="form-control" ng-disabled="vm.isDisabled[student.id]"
+             ng-model="student.sex" required/></td>
+          </td>
+          <td class="table-border custom-td">
+            <input type="text" class="form-control custom-input" ng-disabled="vm.isDisabled[student.id]"
+             ng-model="student.section" required/>
+             <i class="fa fa-pencil-square-o editsave-icon" ng-hide="!vm.isDisabled[student.id]"
+             ng-click="vm.isDisabled[student.id] = false"></i>
+             <i class="fa fa-check-square-o editsave-icon" ng-hide="vm.isDisabled[student.id]"
+             ng-click="vm.updateStudent(student); vm.isDisabled[student.id] = true"></i>
+           </td>
+          </td>
         </tbody>
 
+
     </table>
+
+
+</div>
 </div>

@@ -120,3 +120,31 @@ $colorWhite:#ffffff;
     padding-left: 0px;
   }
 }
+//
+// FORM.tr, DIV.tr
+// {
+//     display:table-row;
+// }
+// SPAN.td
+// {
+//     display:table-cell;
+// }
+.td
+{
+    display:table-cell;
+}
+.editsave-icon {
+  float: right;
+  cursor: pointer;
+  margin-top: -40px;
+}
+.custom-td {
+  width: 192px;
+  height: 52px;
+
+}
+
+.custom-input {
+  width: 150px;
+  height: 34px;
+}

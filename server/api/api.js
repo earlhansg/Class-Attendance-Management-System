@@ -219,10 +219,12 @@ api.get('/allSections/:id', function(req, res){
   });
 });
 
+
+// edit Section
 api.put('/updateSection/:id', function(req, res) {
-  console.log('earl');
-  console.log(req.body);
-  console.log(req.params);
+  // console.log('earl');
+  // console.log(req.body);
+  // console.log(req.params);
 
   Section.findByIdAndUpdate(
   {
@@ -247,6 +249,37 @@ api.put('/updateSection/:id', function(req, res) {
 
 );
 });
+
+// Edit Student
+api.put('/updateStudent/:id', function(req, res){
+  console.log(req.body);
+  Student.findByIdAndUpdate(
+    {
+      _id: req.params.id
+    },
+    {
+      $set:{
+        id: req.body.id,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        sex: req.body.sex,
+        section: req.body.section
+      }
+    },
+    {
+      upsert: false
+    },
+    function(err, updatedData){
+      if(err){
+        console.log("error occured");
+      }
+      else{
+        res.send(updatedData);
+      }
+    }
+  );
+});
+
 
 //Attendance
 api.post('/attendance', function(req,res){
@@ -302,6 +335,8 @@ api.post('/attendance', function(req,res){
 //   }
 // });
 //
+
+
 
   // api.get('/me', function(req, res){
   //   res.json(req.decoded);

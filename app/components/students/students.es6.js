@@ -17,4 +17,5 @@ let studentModule = angular.module('student',[
   })
   .component('student', studentsComponent);
 
+
 export default studentModule;

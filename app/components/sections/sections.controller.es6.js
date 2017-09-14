@@ -35,8 +35,40 @@ class SectionController {
       const students = [];
 
       for (let key in vm.selectedList) {
-       if (vm.selectedList[key]) students.push({ _id: key });
+       if (vm.selectedList[key]) students.push({ id: key, isPresent: 1 });
+       else students.push({ id: key, isPresent: 0});
       }
+
+    const a = [];
+
+      vm.studentsbySection.map(s => {
+        students.map(studId => {
+          if (s.id === studId.id) {
+            if (studId.isPresent) {
+              a.push({
+                id: s.id,
+                fullName: `${s.firstname} ${s.lastname}`,
+                isPresent: 1
+              });
+            } else {
+              a.push({
+                id: s.id,
+                fullName: `${s.firstname} ${s.lastname}`,
+                isPresent: 0
+              });
+            }
+
+          } else {
+            a.push({
+              id: s.id,
+              fullName: `${s.firstname} ${s.lastname}`,
+              isPresent: 0
+            });
+          }
+        });
+      });
+
+      console.log('earl', a);
 
       var data = {
         date: new Date(),

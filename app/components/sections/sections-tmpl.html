@@ -22,7 +22,7 @@
         <tbody class="table-body" ng-repeat="student in vm.studentsbySection">
           <td class="student-data"><small class="name-data"> {{student.firstname}} {{student.lastname}} </small></td>
           <td class="center">
-            <input type="checkbox" ng-model="vm.selectedList[student._id]" ng-value="$index" />
+            <input type="checkbox" ng-model="vm.selectedList[student.id]" ng-value="false"/>
           </td>
         </tbody>
         <!-- <tbody class="table-body">
