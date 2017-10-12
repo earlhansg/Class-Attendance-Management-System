@@ -5,8 +5,7 @@ class SectionController {
 
     vm.currDate = new Date();
     vm.date = $filter('date')(vm.currDate, "fullDate");
-
-
+    const date = $filter('date')(vm.currDate, "MM-dd-yyyy");
 
     vm.allSections = function (){
 
@@ -31,7 +30,7 @@ class SectionController {
 
     // vm.selectedList = [];
     vm.checkAttendance = function (){
-      console.log(vm.selectedList);
+      // console.log(vm.selectedList);
       const students = [];
 
       for (let key in vm.selectedList) {
@@ -46,42 +45,57 @@ class SectionController {
           if (s.id === studId.id) {
             if (studId.isPresent) {
               a.push({
+                _id: s._id,
                 id: s.id,
                 fullName: `${s.firstname} ${s.lastname}`,
-                isPresent: 1
+                isPresent: 1,
+                date: date
               });
             } else {
               a.push({
+                _id: s._id,
                 id: s.id,
                 fullName: `${s.firstname} ${s.lastname}`,
-                isPresent: 0
+                isPresent: 0,
+                date: date
               });
             }
 
           } else {
             a.push({
+              _id: s._id,
               id: s.id,
               fullName: `${s.firstname} ${s.lastname}`,
-              isPresent: 0
+              isPresent: 0,
+              date: date
             });
           }
         });
       });
 
-      console.log('earl', a);
 
       var data = {
-        date: new Date(),
-        students
+        // date: new Date(),
+        students: a
       };
+      // console.log(students);
       console.log(data);
 
       AttendanceFactory.checkAttendance(data)
       .then(function(response){
-        console.log(response);
+        // console.log(response);
       });
 
     };
+
+
+      // vm.getDaysinMonth = function (month, year){
+      //   return new Date(year, month, 0).getDate();
+      // };
+      // console.log(vm.getDaysinMonth(2, 2017));
+      // vm.getDate();
+
+
 
   }
 }

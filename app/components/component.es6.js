@@ -5,6 +5,7 @@ import Student from './students/students.es6';
 import Register from './registration/register.es6';
 import Section from './sections/sections.es6';
 import SectionAdd from './sections/sections-add.es6';
+import Attendance from './attendance/attendance.es6';
 
 export default angular.module('app.components',[
   Menu.name,
@@ -12,5 +13,6 @@ export default angular.module('app.components',[
   Student.name,
   Register.name,
   Section.name,
-  SectionAdd.name
+  SectionAdd.name,
+  Attendance.name
 ]);

@@ -2,7 +2,7 @@
 class StudentController {
   constructor(StudentFactory, $window){
     var vm = this;
-  
+
 
     vm.user = JSON.parse($window.sessionStorage.getItem('response'));
 
@@ -22,11 +22,7 @@ class StudentController {
 
 
 vm.updatedStudent = {};
-    // vm.editStudent = function(data){
-    //   vm.isDisabled = false;
-    //
-    // };
-// vm.updateDone[] = true;
+
     vm.updateStudent = function(data){
 
       vm.updatedStudent._id = data._id;

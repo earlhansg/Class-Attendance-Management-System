@@ -283,15 +283,15 @@ api.put('/updateStudent/:id', function(req, res){
 
 //Attendance
 api.post('/attendance', function(req,res){
-  console.log(req.body.students);
+  console.log("attendance");
     var attendance = new Attendance ({
-      date : req.body.date,
+      // date : req.body.date,
       students: req.body.students
     });
-
+    console.log(attendance);
 
     attendance.save(function(err, data){
-      console.log();
+
       if(err){
         res.send(err);
         return;
@@ -303,6 +303,83 @@ api.post('/attendance', function(req,res){
 
     });
   });
+
+  api.get('/getAttendace', function(req, res){
+
+
+    Attendance.find({}, function(Sections, err){
+      if(err){
+        res.send(err);
+        return;
+      }
+      res.json(Sections);
+    });
+  });
+
+
+api.get('/getAllPresent/', function(req, res){
+
+  Attendance.find({
+    'students.date': '2017-09-27T16:00:00.000Z'
+  },
+  function(err, data) {
+
+    if(err) throw new Error();
+
+    const result = data.map(s => s.students)[0]
+                       .filter(a => a.isPresent);
+
+    res.json(result);
+  });
+});
+
+
+api.get('/studentByAttendance/:month', function(req, res){
+
+var monthNumber = parseInt(req.params.month);
+// var monthNumber;
+// console.log("hello");
+console.log(monthNumber);
+  var attendance = Attendance.aggregate([
+
+    {
+      $unwind: "$students"
+    },
+
+    {
+      $project: {
+        // _id: "$students.fullName",
+        "students": 1,
+        month: { $month: '$students.date'}
+      }
+    },
+
+    {
+      $match: {month: monthNumber}
+    },
+
+    {
+      $group:{
+        _id: "$students.fullName",
+        presentData:{ $push: "$$ROOT" }
+
+      }
+    },
+
+    // {
+    //   $lookup:{
+    //     from:"attendances",
+    //     localField:"_id",
+    //     foreignField:"students._id",
+    //     as:"presentData"
+    //   }
+    // },
+  ]).exec(function(err , data){
+    if(err) throw new Error();
+    // res.send(data);
+    res.json(data);
+  });
+});
 
 // api.use(function(req, res, next) {
 //
@@ -342,5 +419,6 @@ api.post('/attendance', function(req,res){
   //   res.json(req.decoded);
   //
   // });
+
   return api;
 };
