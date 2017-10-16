@@ -1,11 +1,15 @@
 
-<div>
-  <label>Data by Month</label>
-  <input type="date"
-  ng-model="vm.date" placeholder="Data by Month">
 
-  <button type="button" name="button" ng-click="vm.getDate()">Get</button>
+<div class="container">
+  <label class="label-title">Data by Month:</label>
+  <input type="date"
+         ng-model="vm.date" placeholder="Data by Month">
+
+  <button type="button" name="button"
+          ng-click="vm.getDate()" class="btn-get">
+          <i class="fa fa-search" aria-hidden="true"></i></button>
 </div>
+
 
 <div class="table-responsive">
   <table class="table table-border">
@@ -16,39 +20,6 @@
                  ng-repeat="days in vm.days">
                    <span>{{$index+1}}</span>
                  </th>
-
-                 <!-- <th class="table-border font-date">1</th>
-                 <th class="table-border font-date">2</th>
-                 <th class="table-border font-date">3</th>
-                 <th class="table-border font-date">4</th>
-                 <th class="table-border font-date">5</th>
-                 <th class="table-border font-date">6</th>
-                 <th class="table-border font-date">7</th>
-                 <th class="table-border font-date">8</th>
-                 <th class="table-border font-date">9</th>
-                 <th class="table-border font-date">10</th>
-                 <th class="table-border font-date">11</th>
-                 <th class="table-border font-date">12</th>
-                 <th class="table-border font-date">13</th>
-                 <th class="table-border font-date">14</th>
-                 <th class="table-border font-date">15</th>
-                 <th class="table-border font-date">16</th>
-                 <th class="table-border font-date">17</th>
-                 <th class="table-border font-date">18</th>
-                 <th class="table-border font-date">19</th>
-                 <th class="table-border font-date">20</th>
-                 <th class="table-border font-date">21</th>
-                 <th class="table-border font-date">22</th>
-                 <th class="table-border font-date">23</th>
-                 <th class="table-border font-date">24</th>
-                 <th class="table-border font-date">25</th>
-                 <th class="table-border font-date">26</th>
-                 <th class="table-border font-date">27</th>
-                 <th class="table-border font-date">28</th>
-                 <th class="table-border font-date">29</th>
-                 <th class="table-border font-date">30</th>
-                 <th class="table-border font-date">31</th> -->
-
              </tr>
           </thead>
          <tbody class="body-color"

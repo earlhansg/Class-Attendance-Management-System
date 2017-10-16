@@ -11,7 +11,9 @@ let attendanceFactory = function($http) {
   };
 
   let viewAttendance = (month) => {
+
     const url = `${API_URL}/studentByAttendance/${month}`;
+    // const url = `${API_URL}/studentByAttendance/${date.month}/${date.year}`;
     return $http.get(url);
 
   };

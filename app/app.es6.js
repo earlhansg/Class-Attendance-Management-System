@@ -3,7 +3,6 @@ require('./reset.less');
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 
-
 import AppComponent from './app.component.es6';
 import AppController from './app.controller.es6';
 import Components from './components/component.es6';
@@ -19,7 +18,8 @@ import Common from './common/common.es6';
 angular.module('app', [
   uiRouter,
   Components.name,
-  Common.name,
+  Common.name
+
 ])
   .directive('app', AppComponent)
   .controller('AppController', AppController)

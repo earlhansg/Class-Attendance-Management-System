@@ -10,6 +10,7 @@ constructor($filter, AttendanceFactory){
 
 // get data to the to UI and filter it then run the getDays()
   vm.getDate = function(){
+
       vm.month = $filter('date')(vm.date, "MM");
       vm.year = $filter('date')(vm.date, "yyyy");
       vm.output = vm.getDaysinMonth(vm.month, vm.year);
@@ -43,26 +44,13 @@ constructor($filter, AttendanceFactory){
           vm.students = students;
 
           console.log(vm.students);
-          // var result = vm.students.map(function(a) {
-          //   return a.presentData.map(function(b){
-          //     return b.students;
-          //   });
-          // });
-          // console.log(result[0][0]);
-
-
-
-          // var result = angular.forEach(vm.students, function(value, key){
-          //   angular.forEarch(value, function(valueI){
-          //     console.log(valueI.presentData);
-          //   });
-          // });
-          // console.log(result);
 
       });
+
   };
 
-  // vm.getStudentAttendance();
+
+
 
  }
 

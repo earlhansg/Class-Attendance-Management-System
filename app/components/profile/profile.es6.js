@@ -2,6 +2,7 @@ import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 import profileComponent from './profile.component.es6';
 
+
 let profileModule = angular.module('profile',[
   uiRouter
 ])

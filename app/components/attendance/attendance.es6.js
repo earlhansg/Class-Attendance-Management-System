@@ -16,11 +16,18 @@ let attendanceModule = angular.module('attendance',[
 })
 .component('attendance', attendanceComponent);
 
-// .directive('datePicker', function() {
-//     return {
-//
+
+// .directive('datepicker', function() {
+//   return {
+//     link: function(scope, el, attr) {
+//       $(el).datepicker({
+//         onSelect: function(dateText) {
+//           console.log(dateText);
+//           // how do i set this elements model property ?
 //         }
-//     };
+//       });
+//     }
+//   };
 // });
 
 export default attendanceModule;
