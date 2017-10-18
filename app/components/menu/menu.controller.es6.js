@@ -8,8 +8,11 @@ class MenuController {
 
     // var id = vm.user.data.message.id;
 
-    vm.click = function(){
+    vm.profile = function(){
       $state.go('profile');
+    };
+    vm.attendance = function() {
+      $state.go('attendance');
     };
 
     vm.init = function() {

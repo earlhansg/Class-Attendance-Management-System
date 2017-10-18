@@ -1,0 +1,70 @@
+$fontHeader:Josefin Slab;
+
+#attendance-body{
+  font-style: $fontHeader;
+  height: auto;
+  position: relative;
+
+  .navbar{
+    background-color: #008C9E;
+    border-style: none;
+  }
+
+  .attendance-header{
+    text-align: center;
+    position: relative;
+    background-color: #F2F4FA;
+    border-style: none;
+
+    .well{
+      margin-top: 50px;
+      font-size: 20px;
+      background-color: #F2F4FA;
+      // background-color: #00B4CC;
+      color: #3E4554;
+      border-style: none;
+      padding: 0px;
+    }//well
+    .well-padding{
+      padding-top: 15px;
+    }
+
+    .attendance-body{
+      background-color: #DCDCDD;
+      text-align: left;
+      i{
+        margin-left: 10px;
+        padding: 5px;
+        // color:#ffffff;
+      }
+      .label-title{
+        font-size: 15px;
+        font-weight: normal;
+        margin-left: 5px;
+      }
+      input{
+        border-style: none;
+        padding-top: 2px;
+      }
+      .btn-get{
+        background-color: #005F6B;
+        i{
+          margin-left: 1px;
+        }
+      }//btn-get
+
+      .table-responsive{
+
+        font-style: $fontHeader;
+        .table-border{
+          // border-style: none;
+          text-align: center;
+        }
+        .row-color{
+          background-color: #343838;
+        }
+
+      }//table-responsive
+    }//attendance-body
+  }
+}
