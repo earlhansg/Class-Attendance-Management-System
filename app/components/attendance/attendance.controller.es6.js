@@ -10,7 +10,6 @@ constructor($filter, AttendanceFactory){
 
 // get data to the to UI and filter it then run the getDays()
   vm.getDate = function(){
-
       vm.month = $filter('date')(vm.date, "MM");
       vm.year = $filter('date')(vm.date, "yyyy");
       vm.output = vm.getDaysinMonth(vm.month, vm.year);
@@ -34,7 +33,6 @@ constructor($filter, AttendanceFactory){
     AttendanceFactory.viewAttendance(vm.month)
       .then(function(response){
           let students = response.data;
-
           students.map(student => {
             return student.presentData.map(s => {
               s.students.day = parseInt(new Date(s.students.date).getDate() - 1);
@@ -42,9 +40,6 @@ constructor($filter, AttendanceFactory){
           });
 
           vm.students = students;
-
-          console.log(vm.students);
-
       });
 
   };

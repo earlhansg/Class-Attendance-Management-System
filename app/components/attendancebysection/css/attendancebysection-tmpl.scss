@@ -1,5 +1,8 @@
 $fontHeader:Josefin Slab;
 
+.logo {
+  cursor: pointer;
+}
 #attendance-body{
   font-style: $fontHeader;
   height: auto;
@@ -56,6 +59,7 @@ $fontHeader:Josefin Slab;
       .table-responsive{
 
         font-style: $fontHeader;
+        margin-left: 117px;
         .table-border{
           // border-style: none;
           text-align: center;
