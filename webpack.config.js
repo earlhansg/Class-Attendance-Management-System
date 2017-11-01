@@ -45,18 +45,33 @@ var config = {
             test: /\.html$/,
             loader: 'html-loader'
         },
-        // {
-        //   test: /\.scss$/,
-        //   loaders: ['style-loader', 'css-loader', 'postcss-loader']
-        // },
+        {
+          test: /\.scss$/,
+          loaders: ['style-loader', 'css-loader', 'postcss-loader']
+        },
+
+        {
+          test: /\.(jpe?g|png|gif|svg)$/i,
+          loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image?bypassOnDebug&optimizationLevel=7&interlaced=false'
+          ]
+        },
+
+        {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'file-loader',
+        },
 
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-          'file?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        ]
-      },
+      test: /\.(gif|png|jpe?g|svg)$/i,
+      loaders: [
+        'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+        'image-webpack-loader?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}'
+      ]
+      }
+
+
 
       // {
       //       test: /\.scss$/,
@@ -78,8 +93,21 @@ var config = {
     // We have to manually add the Hot Replacement plugin when running
     // from Node
     new ExtractTextPlugin("styles.css"),
-    new Webpack.HotModuleReplacementPlugin()
-  ]
+    new Webpack.HotModuleReplacementPlugin(),
+
+    new Webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        Popper: ['popper.js', 'default'],
+        // In case you imported plugins individually, you must also require them here:
+        Util: "exports-loader?Util!bootstrap/js/dist/util",
+        Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown",
+
+      })
+  ],
+
+
 
 };
 

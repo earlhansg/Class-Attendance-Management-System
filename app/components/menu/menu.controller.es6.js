@@ -9,7 +9,7 @@ class MenuController {
     // var id = vm.user.data.message.id;
 
     vm.profile = function(){
-      $state.go('profile');
+      $state.go('profile.home');
     };
     vm.attendance = function() {
       $state.go('attendance');

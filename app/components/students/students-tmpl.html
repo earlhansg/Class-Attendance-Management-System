@@ -1,61 +1,72 @@
-<form action="" id="custom-search">
-  <div>
-    <input type="text" name="" value="" placeholder="Search" class="search" ng-model="searchStudent">
-    <button type="button" name="button"><i class="fa fa-search"></i></button>
+<div id="students-view">
+  <div class="students-body">
+    <div class="students-logo">
+      <p>
+        <span class="fa fa-address-book"> Students</span>
+      </p>
+      <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+    </div>
+    <hr class="custom-border">
+
+    <!-- <form class="students-search">
+      <input type="text" name="" value="" placeholder="Search" class="search" ng-model="searchStudent">
+      <i class="fa fa-search"></i>
+    </form> -->
+
+    <div id="student-data">
+      <form action="" id="custom-search">
+        <div>
+          <input type="text" name="" value="" placeholder="Search" class="search" ng-model="searchStudent">
+          <button type="button" name="button"><i class="fa fa-search"></i></button>
+        </div>
+      </form>
+      <div id="student-table">
+        <div id="table-scroll">
+        <table class="table table-border">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Section</th>
+                    <th></th>
+                </tr>
+            </thead>
+              <tbody ng-repeat="student in vm.students | filter:searchStudent" ng-init="vm.isDisabled[student.id] = true">
+                  <tr>
+                    <td>
+                      <input type="text" ng-disabled="true"
+                       ng-model="student.id"/>
+                    </td>
+                    <td>
+                      <input type="text" ng-disabled="vm.isDisabled[student.id]" ng-class = "{ edit: !vm.isDisabled[student.id] }"
+                       ng-model="student.firstname" />
+                    </td>
+                    <td>
+                      <input type="text" ng-disabled="vm.isDisabled[student.id]" ng-class = "{ edit: !vm.isDisabled[student.id] }"
+                       ng-model="student.lastname" />
+                    </td>
+                    <td>
+                      <input type="text" ng-disabled="vm.isDisabled[student.id]" ng-class = "{ edit: !vm.isDisabled[student.id] }"
+                       ng-model="student.section" />
+                    </td>
+
+                    <td>
+                      <button class="button" ng-hide="!vm.isDisabled[student.id]"
+                              ng-click="vm.isDisabled[student.id] = false">
+                        <p>Edit</p>
+                      </button>
+                      <button class="button" ng-hide="vm.isDisabled[student.id]"
+                              ng-click="vm.updateStudent(student); vm.isDisabled[student.id] = true">
+                        <p>Save</p>
+                      </button>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+      </div>
+    </div>
   </div>
-</form>
-
-<div class="table-responsive">
-    <table class="table table-border">
-      <thead>
-          <tr class="row-color">
-            <th class="table-border">ID No.</th>
-            <th class="table-border">Firstname</th>
-            <th class="table-border">Lastname</th>
-            <th class="table-border">Sex</th>
-            <th class="table-border">Section</th>
-          </tr>
-        </thead>
-
-        <!-- <tbody class="body-color" ng-repeat="student in vm.message | filter:searchStudent">
-          <td class="table-border">{{student.id}}</td>
-          <td class="table-border">{{student.firstname}} {{student.lastname}}</td>
-          <td class="table-border">{{student.address}}</td>
-          <td class="table-border">{{student.sex}}</td>
-          <td class="table-border">{{student.section}}</td>
-        </tbody> -->
-
-        <tbody class="body-color" ng-repeat="student in vm.students | filter:searchStudent" ng-init="vm.isDisabled[student.id] = true">
-          <td class="table-border">
-            <input type="text" class="form-control" ng-disabled="true"
-             ng-model="student.id" required/></td>
-          </td>
-          <td class="table-border">
-            <input type="text" class="form-control" ng-disabled="vm.isDisabled[student.id]"
-             ng-model="student.firstname" required/></td>
-          </td>
-          <td class="table-border">
-            <input type="text" class="form-control" ng-disabled="vm.isDisabled[student.id]"
-             ng-model="student.lastname" required/></td>
-          </td>
-          <td class="table-border">
-            <input type="text" class="form-control" ng-disabled="vm.isDisabled[student.id]"
-             ng-model="student.sex" required/></td>
-          </td>
-          <td class="table-border custom-td">
-            <input type="text" class="form-control custom-input" ng-disabled="vm.isDisabled[student.id]"
-             ng-model="student.section" required/>
-             <i class="fa fa-pencil-square-o editsave-icon" ng-hide="!vm.isDisabled[student.id]"
-             ng-click="vm.isDisabled[student.id] = false"></i>
-             <i class="fa fa-check-square-o editsave-icon" ng-hide="vm.isDisabled[student.id]"
-             ng-click="vm.updateStudent(student); vm.isDisabled[student.id] = true"></i>
-           </td>
-          </td>
-        </tbody>
-
-
-    </table>
-
 
 </div>
 </div>

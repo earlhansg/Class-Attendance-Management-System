@@ -1,5 +1,10 @@
 require('./reset.less');
 
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+// import 'angular-momentjs/angular-momentjs';
+// import 'angular-bootstrap3-datepicker';
+
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 

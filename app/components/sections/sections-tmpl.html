@@ -1,5 +1,64 @@
 
-<div class="row">
+<div id="view-section">
+  <div id="section-body">
+    <div class="section-logo">
+      <p>
+        <span class="fa fa-address-book-o"> Sections</span>
+      </p>
+      <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+    </div>
+    <hr class="custom-border">
+
+    <div id="section-data" ng-init="vm.isDisable = true">
+
+      <div id="select-section">
+        <select class="styled-select slate" ng-model="vm.sectioncode">
+          <option
+          ng-repeat="section in vm.dataSections">{{section.sectioncode}}</option>
+        </select>
+
+        <button class="btn-go"
+                ng-click="vm.getStudentbySection(vm.sectioncode); vm.isDisable = false">
+                <p>
+                  <i class="fa fa-check"></i>
+                </p>
+        </button>
+      </div>
+
+      <div id="section-table">
+        <div id="table-scroll">
+          <table class="table table-border">
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>{{ vm.currDate | date : "fullDate"}}</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat="student in vm.studentsbySection">
+              <tr>
+                <td>{{student.firstname}} {{student.lastname}} </td>
+                <td>
+                  <input type="checkbox" ng-model="vm.selectedList[student.id]" ng-value="false"/>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="div-button">
+        <button type="button" ng-click="vm.checkAttendance()"
+                ng-hide="vm.isDisable"name="button" class="btn-submit"> <p>SAVE</p>
+        </button>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row">
   <div id="select-section">
       <select class="styled-select slate" ng-model="vm.sectioncode">
         <option
@@ -9,9 +68,9 @@
     ng-click="vm.getStudentbySection(vm.sectioncode)">Go <i class="fa fa-check-square-o"></i>
     </button>
   </div>
-</div>
+</div> -->
 
-<div class="table-responsive">
+<!-- <div class="table-responsive">
     <table class="table">
       <thead>
           <tr class="row-color table-header">
@@ -24,7 +83,7 @@
           <td class="center">
             <input type="checkbox" ng-model="vm.selectedList[student.id]" ng-value="false"/>
           </td>
-        </tbody>
+        </tbody> -->
         <!-- <tbody class="table-body">
           <td class="student-data"><small class="name-data">Kristy Mae Almuete</small></td>
           <td class="center">
@@ -43,7 +102,7 @@
             <input type="radio" name="" value="">
           </td>
         </tbody> -->
-    </table>
+    <!-- </table>
 </div>
 <button type="button" ng-click="vm.checkAttendance()"
 name="button" class="submit"><span class="fa fa-check"></span> Submit

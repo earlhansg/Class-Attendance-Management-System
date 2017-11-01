@@ -9,7 +9,6 @@ class StudentController {
     var id = vm.user.data.message.id;
 
 
-
     vm.init = function() {
 
       StudentFactory.allStudents(id)

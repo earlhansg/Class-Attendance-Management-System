@@ -18,12 +18,22 @@ class SectionAddController {
           });
     };
 
-    vm.deleteSection = function(sectionId, index){
-        SectionFactory.deleteSection(sectionId)
+    vm.selectDelete = function(sectionId, index) {
+      vm.sectionId = sectionId;
+      vm.index = index;
+    };
+    vm.deleteSection = function(){
+        SectionFactory.deleteSection(vm.sectionId)
         .then(function(response){
-          vm.sections.splice(index, 1);
+          vm.sections.splice(vm.index, 1);
         });
     };
+    // vm.deleteSection = function(sectionId, index){
+    //     SectionFactory.deleteSection(sectionId)
+    //     .then(function(response){
+    //       vm.sections.splice(index, 1);
+    //     });
+    // };
 
 
 

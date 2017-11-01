@@ -18,7 +18,7 @@ class AppController {
 
             if(response.data.success == true){
                 $window.sessionStorage.setItem('response', JSON.stringify(response));
-                $state.go('menu');
+                $state.go('profile.home');
 
               } else {
                   vm.error = response.data.message.statusMessage;

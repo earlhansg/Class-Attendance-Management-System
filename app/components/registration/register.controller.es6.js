@@ -9,8 +9,7 @@ class RegisterController {
   vm.user = JSON.parse($window.sessionStorage.getItem('response'));
 
   var id = vm.user.data.message.id;
-  console.log(id);
-  
+
   vm.doRegister = function (){
     vm.message = '';
     vm.studentData.created = id;
@@ -20,9 +19,24 @@ class RegisterController {
           vm.success = true;
           vm.studentData = {};
           vm.message = response.data.message;
-
-        });
+          });
       };
+
+
+  vm.open = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    vm.opened = true;
+  };
+
+  vm.dateOptions = {
+    'year-format': "'yy'",
+    'starting-day': 1
+  };
+
+  vm.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'shortDate'];
+  vm.format = vm.formats[0];
     }
 }
 

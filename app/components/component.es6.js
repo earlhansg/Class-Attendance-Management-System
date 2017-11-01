@@ -7,6 +7,7 @@ import Section from './sections/sections.es6';
 import SectionAdd from './sections/sections-add.es6';
 import Attendance from './attendance/attendance.es6';
 import AttendancebySection from './attendancebysection/attendancebysection.es6';
+import Home from './home/home.es6';
 
 export default angular.module('app.components',[
   Menu.name,
@@ -16,5 +17,6 @@ export default angular.module('app.components',[
   Section.name,
   SectionAdd.name,
   Attendance.name,
-  AttendancebySection.name
+  AttendancebySection.name,
+  Home.name
 ]);

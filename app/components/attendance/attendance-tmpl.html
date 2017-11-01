@@ -1,6 +1,71 @@
 
+<div id="attendance">
+  <div class="attendance-body">
+    <div class="attendance-logo">
+      <p>
+        <span class="fa fa-book"> Attendance</span>
+      </p>
+      <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+    </div>
+    <hr class="attendance-border">
 
-<div class="container">
+    <div id="attendance-data" ng-init="vm.disable = true">
+
+      <input type="text" datepicker-popup="{{vm.format}}" ng-model="vm.date"
+             ng-change="vm.getDate(); vm.disable = false" is-open="vm.opened" datepicker-options="vm.dateOptions" ng-required="true"
+             close-text="Close" placeholder="Enter Month and Year ... "/>
+      <i class="glyphicon glyphicon-calendar date-icon" ng-click="vm.open($event)"></i>
+
+
+      <br>
+
+      <div id="attendance-table" ng-hide="vm.disable">
+        <div id="table-scroll">
+          <table class="table attendance-border">
+            <thead>
+                <tr>
+                    <th>Students</th>
+                    <th ng-repeat="days in vm.days track by $index">
+                      <span>{{$index+1}}</span>
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody
+            ng-repeat="student in vm.students">
+                <tr>
+                  <td>{{student._id}}</td>
+                    <td class="table-border font-date"
+                        ng-repeat="days in vm.days track by $index">
+
+                        <i class="fa fa-check"
+                           ng-repeat="data in student.presentData"
+                           ng-if="(data.students.day == $parent.$index + 1) && data.students.isPresent"
+                        ></i>
+
+                        <i class="fa fa-times"
+                           ng-repeat="data in student.presentData"
+                           ng-if="(data.students.day == $parent.$index + 1) && !data.students.isPresent"
+                        ></i>
+                   </td>
+                </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
+<!-- <div class="container">
   <label class="label-title">Data by Month:</label>
   <input type="date"
          ng-model="vm.date" placeholder="Data by Month">
@@ -38,9 +103,9 @@
                           ng-repeat="data in student.presentData"
                           ng-if="(data.students.day == $parent.$index + 1) && !data.students.isPresent"
                        ></i>
-                  </td>
+                  </td> -->
                    <!-- <span>{{data.students.id}}</span> -->
-             </tr>
+             <!-- </tr>
          </tbody>
      </table>
-</div>
+</div> -->

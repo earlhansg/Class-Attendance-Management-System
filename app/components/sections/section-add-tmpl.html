@@ -1,101 +1,162 @@
-<!-- <div class="row">
-  <div id="select-section">
-    <select class="selectpicker" multiple title="Select Section ...">
-      <option>BSIT-R5</option>
-      <option>BSIT-R6</option>
-      <option>BSIT-R7</option>
-    </select>
+<div id="section-add">
+  <div id="sectionAdd-body">
+      <div class="sectionAdd-logo">
+        <p>
+          <span class="fa fa-address-book-o"> Sections</span>
+        </p>
+        <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+      </div>
+      <hr class="custom-border">
+
+      <div id="sectionAdd-data">
+        <button class="btn-addnew" data-toggle="modal" data-target="#add">
+          <p>
+            <i class="fa fa-plus" aria-hidden="true"></i> Add Section
+          </p>
+        </button>
+        <form action="" id="custom-search">
+          <div>
+            <input type="text" name="" value="" placeholder="Search" class="search"
+                   ng-model="searchSection">
+            <button type="button" name="button" class="btn-search">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </form>
+
+        <div id="sectionAdd-table">
+            <div id="table-scroll">
+                <table class="table table-border">
+                  <thead>
+                    <tr>
+                      <th>Sections</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody ng-repeat="section in vm.sections | filter: searchSection">
+                    <tr>
+                      <td>
+                        {{section.sectioncode}}
+                      </td>
+                      <td>
+                        <!-- <i class="fa fa-pencil"></i>
+                        <i class="fa fa-trash-o"></i> -->
+                        <button class="btn-edit" data-toggle="modal" data-target="#edit"
+                                ng-click="vm.selectEdit(section)">
+                          <p>Edit</p>
+                        </button>
+                        <button class="btn-delete" data-toggle="modal" data-target="#delete"
+                                ng-click="vm.selectDelete(section._id, $index)">
+                          <p>Delete</p>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+
   </div>
-</div> -->
 
-<div class="table-responsive table-addsection">
-  <button class="add-section" data-toggle="modal" data-target="#add"><i class="fa fa-plus" aria-hidden="true"></i> Add Section</button>
-    <table class="table">
-      <thead>
-          <tr class="row-color table-header header-section">
-            <th class="center">Section</th>
-            <th class="center th-header2 border"><small>Action</small></th>
-          </tr>
-      </thead>
-      <tbody class="table-body body-section" ng-repeat="section in vm.sections">
-        <td class="student-data"><small class="name-data">{{section.sectioncode}}</small></td>
-        <!-- <td class="student-data"><input type="text" placeholder="{{section.sectioncode}}" disabled></td> -->
-        <td class="center border">
-          <i class="fa fa-pencil custom-button" data-toggle="modal" data-target="#edit" ng-click="vm.selectEdit(section)"></i>
-          <!-- <button ng-click="vm.deleteSection(section._id)"><i class="fa fa-trash-o"></i></button> -->
-          <i class="fa fa-trash-o custom-button" ng-click="vm.deleteSection(section._id, $index)"></i>
-        </td>
-      </tbody>
-        <!-- <tbody class="table-body body-section">
-          <td class="student-data"><small class="name-data">BSIT-R5</small></td>
-          <td class="center border">
-            <i class="fa fa-pencil"></i>
-            <i class="fa fa-trash-o"></i>
-          </td>
-        </tbody>
-        <tbody class="table-body body-section">
-          <td class="student-data"><small class="name-data">BSIT-R6</small></td>
-          <td class="center border">
-            <i class="fa fa-pencil"></i>
-            <i class="fa fa-trash-o"></i>
-          </td>
-        </tbody>
-        <tbody class="table-body body-section">
-          <td class="student-data"><small class="name-data">BSIT-R7</small></td>
-          <td class="center border">
-            <i class="fa fa-pencil"></i>
-            <i class="fa fa-trash-o"></i>
-          </td>
-        </tbody> -->
-    </table>
 </div>
-
 
 <div id="add" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-custom">
+  <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content no-border ">
-      <div class="modal-header no-border">
+    <div class="modal-content">
+      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-         <h4 class="modal-title"><i class="fa fa-plus-circle"></i> New Section</h4>
+         <div class="modal-title">
+           <p>
+             <i class="fa fa-plus-circle"></i> New Section
+            </p>
+         </div>
       </div>
 
-      <div class="modal-body center">
+      <div class="modal-body">
         <form metod="post" ng-submit="vm.addSection()">
-        <input type="text" class="input-width center"
+        <input type="text" class="input-add"
         ng-model="vm.sectionData.sectioncode" placeholder="Enter Section code ..">
         <br>
-        <button type="submit" class="btn btn-default">Save</button>
+        <button type="submit" class="btn-save">
+          <p>Save</p>
+        </button>
+        <button type="button" data-dismiss="modal" class="btn-cancel">
+          <p>Cancel</p>
+        </button>
         </form>
       </div>
-      <!-- <div class="modal-footer no-border">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div> -->
     </div>
-</div>
+  </div>
 </div>
 
 <div id="edit" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-custom">
+  <div class="modal-dialog">
     <!-- Modal content -->
-    <div class="modal-content no-border ">
-      <div class="modal-header no-border">
+    <div class="modal-content">
+      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-         <h4 class="modal-title"><i class="fa fa-plus-circle"></i> New Section</h4>
+
+        <div class="modal-title">
+          <p>
+            <i class="fa fa-pencil"></i> Update Section
+           </p>
+        </div>
       </div>
 
-      <div class="modal-body center">
+      <div class="modal-body">
         <form metod="post" ng-submit="vm.updateSection()">
-        <input type="text" class="input-width center"
+        <input type="text" class="input-add"
         ng-model="vm.modalData.sectioncode">
         <br>
-        <button type="submit" class="btn btn-default" data-dismiss="{{vm.status}}">Update</button>
+        <button type="submit" class="btn-save">
+          <p>Update</p>
+        </button>
+        <button type="button" class="btn-cancel" data-dismiss="modal">
+          <p>Cancel</p>
+        </button>
         </form>
       </div>
-      <!-- <div class="modal-footer no-border">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div> -->
+      <div class="modal-footer no-border">
+
+      </div>
     </div>
 </div>
+</div>
+
+<div id="delete" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        <div class="modal-title">
+          <p>
+            <i class="fa fa-trash-o"></i> Delete Section
+           </p>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="delete-header">
+          <h1>
+            <i class="fa fa-question-circle"></i> Are you sure you want to delete ?
+          </h1>
+          <br>
+          <button type="submit" class="btn-save"
+                  ng-click="vm.deleteSection()">
+            <p>Yes</p>
+          </button>
+          <button type="button" class="btn-cancel" data-dismiss="modal">
+            <p>Cancel</p>
+          </button>
+        </div>
+
+      </div>
+    </div>
+</div>
+
 </div>

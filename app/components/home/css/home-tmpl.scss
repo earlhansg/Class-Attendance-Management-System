@@ -1,0 +1,59 @@
+$fontHeader:Josefin Slab;
+$colorWhite:#ffffff;
+#home{
+  position: relative;
+  background-color: $colorWhite;
+  margin-top: -19px;
+}
+.home-summary {
+  width: 1016.82px;
+  height: 115px;
+}
+.home-header{
+  margin: 17px 0px 0px 10px;
+  position: absolute;
+  h1 {
+    font-family:$fontHeader;
+    font-size: 28px;
+    color: #353432;
+  }
+  h3 {
+    margin: 7px 0px 0px 0px;
+    font-family:$fontHeader;
+    font-size: 13px;
+    color: #595959;
+  }
+}
+.home-nav{
+  position: absolute;
+  margin: 85px 0px 0px 0px;
+}
+.nav-pills {
+ li {
+   a {
+    border-radius: 0px;
+    padding: 7px 15px;
+    font-family: $fontHeader;
+    font-size: 14px;
+    color: #353432;
+
+    &:hover{
+      background-color:$colorWhite;
+    }
+   }
+
+   &:hover{
+     background-color:$colorWhite;
+     border-bottom: 3px solid #FF5B33;
+   }
+ }
+}
+
+.click{
+  border-bottom: 3px solid #FF5B33;
+}
+
+.visited {
+  border-left: 4px solid #FF5B33;
+  background-color: #353432;
+}

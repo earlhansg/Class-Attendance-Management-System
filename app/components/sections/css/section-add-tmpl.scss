@@ -1,85 +1,306 @@
 @import "mixins";
+$fontHeader:Josefin Slab;
 $colorWhite:#ffffff;
 
-.table-responsive{
 
-  .header-section{
-    background-color: #2D8F6B;
-    color:$colorWhite;
-    font-size: 15px;
+#section-add {
+  margin-top: 45px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $colorWhite;
+  position: relative;
+  width: 850px;
+  height: 600px;
+  font-family: $fontHeader;
+}
+
+#sectionAdd-body {
+  position: absolute;
+  margin: 35px 0px 0px 35px;
+}
+.sectionAdd-logo {
+  p {
+    font-size: 20px;
+    color: #4E4D4A;
+    margin-bottom: 7px;
+  }
+  small {
+    font-size: 12px;
+    color: #8c8c8c;
+  }
+}
+
+.custom-border {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 0;
+    width: 760px;
+    border-top: 1px solid #bfbfbf;
+}
+#sectionAdd-data {
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  height: 400px;
+}
+
+#sectionAdd-data {
+  padding: 0;
+  margin-top: 35px;
+
+  div{
+    input {
+      font-size: 13px;
+      padding: 5px;
+      width: 250px;
+    }
+  }//div
+}
+
+.btn-search {
+  border: 0;
+     background: none;
+     /** belows styles are working good */
+     padding: 3px 5px;
+     margin-top: 2px;
+     position: relative;
+     left: -28px;
+}
+
+.btn-addnew {
+  float: right;
+  border: 0;
+  background: none;
+  padding: 7px 7px;
+  border-radius: 2px;
+  position: relative;
+  background-color: #FF8633;
+  p {
+    font-size: 13px;
+    color: $colorWhite;
+  }
+}
+
+.search{
+  padding-right: 3px;
+  padding-right: 4px \9;
+  padding-left: 3px;
+  padding-left: 4px \9;
+}
+
+#sectionAdd-table {
+  margin-top: 25px;
+  // color: #353432;
+  position: relative;
+}
+
+#sectionAdd-table {
+  margin-top: 25px;
+  // color: #353432;
+  clear: right;
+  position: relative;
+}
+
+#table-scroll {
+  height:350px;
+  overflow:auto;
+  margin-top:20px;
+}
+
+.table-border {
+
+  thead {
+    border: 1px solid #bfbfbf;
+    font-size: 14px;
     font-weight: bold;
+    tr {
+      th {
+        text-align: center;
+      }
+    }
   }
-  .body-section{
-    background-color:#F2F0F2;
+  tbody {
+    text-align: center;
+    font-size: 13px;
+
   }
 }
-// .th-header{
-//   width: 100px;
-// }
-.th-header2{
-  width: 80px;
+
+.btn-edit {
+  border: 0;
+  background: none;
+  border-radius: 2px;
+  position: relative;
+  background-color: #FF8633;
+  width: 40px;
+  height: 15px;
+  p {
+    font-size: 11px;
+    color: $colorWhite;
+  }
 }
-.border {
-  border-left: 1px solid #ddd;
+.btn-delete {
+  border: 0;
+  background: none;
+  border-radius: 2px;
+  position: relative;
+  background-color: #b32d00;
+  width: 40px;
+  height: 15px;
+  p {
+    font-size: 11px;
+    color: $colorWhite;
+  }
 }
-.add-section {
-  background-color: #61BADF;
+
+
+.modal-title {
+  p {
+    font-size: 18px;
+  }
+}
+
+.modal-content {
+  border-radius: 0px;
+  width: 300px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-style: none;
+}
+.modal-body {
+    position: relative;
+    padding: 15px;
+    height: 150px;
+    text-align: center;
+}
+
+.btn-save {
   border-style: none;
-  color:$colorWhite;
-  padding: 3px;
-  @include mQ(375px) {
-    padding: 2px;
-    margin-left: 5px;
+  border-radius: 2px;
+  background-color:#FF8633;
+  padding: 2px;
+  width: 60px;
+  height: 30px;
+  p {
+    color: $colorWhite;
+    font-size: 14px;
   }
 }
-.table-addsection{
-  font-family: sans-serif;
-  margin: 20px auto;
-  width: 750px;
-  @include mQ(768px) {
-    width: 600px;
-  }
-  @include mQ(425px) {
-    border-style: none;
-    margin-left: 43px;
-    width: 350px;
-  }
-  @include mQ(375px) {
-    border-style: none;
-    // width: 500px;
-    margin-left: 30px;
-  }
 
+.btn-cancel {
+  border-style: none;
+  border-radius: 2px;
+  background-color:#b32d00;
+  padding: 2px;
+  width: 60px;
+  height: 30px;
+  p {
+    color: $colorWhite;
+    font-size: 14px;
+  }
 }
-.no-border {
-  border: none;
-  border-radius: 0;
-}
-.modal-custom {
-  width: 350px;
-  border-radius: 0;
+.input-add {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  height: 40px;
   text-align: center;
-  @include mQ(375px) {
-    width: 200px;
-    margin-left: 90px;
-  }
-  @include mQ(425px) {
-    margin-left: 50px;
-  }
-  // margin-left: 150px;
 }
-.input-width {
-  width: 50%;
-  border-radius: 0;
-  display: block;
-}
-
-.center {
+.delete-header {
+  margin-top: 25px;
+  height: 40px;
   text-align: center;
-  margin: 0 auto;
-  // margin-left: 40px;
+  h1 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
 }
-
-.custom-button {
-  cursor: pointer;
-}
+// .table-responsive{
+//
+//   .header-section{
+//     background-color: #2D8F6B;
+//     color:$colorWhite;
+//     font-size: 15px;
+//     font-weight: bold;
+//   }
+//   .body-section{
+//     background-color:#F2F0F2;
+//   }
+// }
+// // .th-header{
+// //   width: 100px;
+// // }
+// .th-header2{
+//   width: 80px;
+// }
+// .border {
+//   border-left: 1px solid #ddd;
+// }
+// .add-section {
+//   background-color: #61BADF;
+//   border-style: none;
+//   color:$colorWhite;
+//   padding: 3px;
+//   @include mQ(375px) {
+//     padding: 2px;
+//     margin-left: 5px;
+//   }
+// }
+// .table-addsection{
+//   font-family: sans-serif;
+//   margin: 20px auto;
+//   width: 750px;
+//   @include mQ(768px) {
+//     width: 600px;
+//   }
+//   @include mQ(425px) {
+//     border-style: none;
+//     margin-left: 43px;
+//     width: 350px;
+//   }
+//   @include mQ(375px) {
+//     border-style: none;
+//     // width: 500px;
+//     margin-left: 30px;
+//   }
+//
+// }
+// .no-border {
+//   border: none;
+//   border-radius: 0;
+// }
+// .modal-custom {
+//   width: 350px;
+//   border-radius: 0;
+//   text-align: center;
+//   @include mQ(375px) {
+//     width: 200px;
+//     margin-left: 90px;
+//   }
+//   @include mQ(425px) {
+//     margin-left: 50px;
+//   }
+//   // margin-left: 150px;
+// }
+// .input-width {
+//   width: 50%;
+//   border-radius: 0;
+//   display: block;
+// }
+//
+// .center {
+//   text-align: center;
+//   margin: 0 auto;
+//   // margin-left: 40px;
+// }
+//
+// .custom-button {
+//   cursor: pointer;
+// }

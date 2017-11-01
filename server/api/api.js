@@ -67,13 +67,16 @@ module.exports = function(app, express){
       lastname: req.body.lastname,
       address: req.body.address,
       city: req.body.city,
-      dob: req.body.dob,
       zipcode: req.body.zipcode,
-      section: req.body.section,
-      id: req.body.id,
       phone: req.body.phone,
       email: req.body.email,
-      sex: req.body.sex
+      id: req.body.id,
+      dob: req.body.dob,
+      section: req.body.section,
+      nickname: req.body.nickname,
+      scholarship: req.body.scholarship,
+      sex: req.body.sex,
+
     });
     student.save(function(err, data){
       if(err){

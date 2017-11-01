@@ -1,90 +1,147 @@
 @import "mixins";
+$fontHeader:Josefin Slab;
+$colorWhite:#ffffff;
 
+#profile-register {
+  width: 850px;
+  height: 730px;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  // height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $colorWhite;
+  position: relative;
+
+}
 .register-body{
-  max-width: 940px;
-  margin-left: 20px;
-
-  @include mQ(1024px) {
-    max-width: 750px;
-    margin-left: 10px;
+  font-style: $fontHeader;
+  position: absolute;
+  margin: 30px 0px 0px 35px;
+}
+.register-icon{
+  p {
+    font-size: 20px;
+    color: #4E4D4A;
   }
-  @include mQ(768px) {
-    max-width: 700px;
-    margin-left: 37px;
-  }
-  @include mQ(425px) {
-    max-width: 300px;
-    margin-left: 65px;
-  }
-  @include mQ(375px) {
-    max-width: 250px;
-    margin-left: 70px;
-  }
-  @include mQ(320px) {
-    max-width: 250px;
-    margin-left: 45px;
+  small {
+    font-size: 12px;
+    color: #8c8c8c;
   }
 }
-// .container {
-//   @include mQ(1024px) {
-//     margin-left: 50px;
-//   }
-//   @include mQ(768px) {
-//     max-width: 730px;
-//   }
-//   @include mQ(425px) {
-//     min-width: 300px;
-//     margin-left: 20px;
-//   }
-//   @include mQ(320px) {
-//     min-width: 250px;
-//     margin-left: 20px;
-//   }
-// }
-.well {
-  border-radius: 0;
-  font-family: Open Sans;
-  background-color: #F1F7EA;
+.custom-border {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 0;
+    width: 760px;
+    border-top: 1px solid #bfbfbf;
 }
-.header-well {
+.student-icon{
+  float: right;
+  margin-right: 30px;
+  width: 90px;
+  height: 73px;
+  border: 2px solid #cccccc;
   text-align: center;
-  i{
-    color: #4CAF50;
+
+  p{
+    font-size: 60px;
+    margin-top: 10px;
   }
 }
-.btn-info{
-  border-radius: 0px;
-  padding: 8px 16px;
+
+.student-personalinfo{
+  clear: left;
+}
+.student-personalinfo{
+  margin-top: 30px;
+  h1 {
+    font-size: 12px;
+    color: #353432;
+  }
 }
 
-// @media (min-width: 1024px) {
-//   .container {
-//     max-width: 800px;
-//   }
-// }
-//
-// @media (min-width: 768px) {
-//   .container {
-//     max-width: 658px;
-//     margin-left: 75px;
-//   }
-// }
-// @media (min-width: 425px) {
-//   .container {
-//     max-width: 300px;
-//     margin-left: 80px;
-//   }
-// }
+.registration-form {
+  margin-top: 10px;
+}
+.input-info {
+  margin-top: 10px;
 
-input.ng-invalid.ng-touched {
-    background-color: #FA787E;
-  }
-input.ng-valid.ng-touched {
-      background-color: #ffffff;
+  input {
+    font-family: $fontHeader;
+    font-size: 14px;
+    width: 220px;
+    border-style: none;
+    border-bottom: 1px solid #bfbfbf;
+    &:focus{
+      outline: none;
+      border-color: #353432;
     }
-textarea.ng-invalid.ng-touched {
-    background-color: #FA787E;
+  }
+
 }
-textarea.ng-valid.ng-touched {
-    background-color: #ffffff;
+
+.dob-icon {
+  margin: 1.5px;
+  cursor: pointer;
+  position: absolute;
+}
+
+
+.radio-item {
+  display: inline-block;
+  position: relative;
+  padding: 0 6px;
+  margin: 6px 0 0;
+}
+
+.radio-item input[type='radio'] {
+  display: none;
+}
+
+.radio-item label {
+  margin-left: 8px;
+  color: #666;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.radio-item label:before {
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin: 0 5px 0 0;
+  width: 19px;
+  height: 19px;
+  border-radius: 11px;
+  border: 2px solid #bfbfbf;
+  background-color: transparent;
+}
+
+.radio-item input[type=radio]:checked + label:after {
+  border-radius: 11px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 6px;
+  left: 16px;
+  content: " ";
+  display: block;
+  background: #FF5233;
+}
+
+.button-center{
+  margin-top: 60px;
+  text-align: center;
+
+}
+.sumbit-button{
+  width: 150px;
+  height: 30px;
+  padding: 2px;
+  border-radius: 2px;
+  background-color: #FF8633;
+  border-style: none;
+  color: $colorWhite;
 }

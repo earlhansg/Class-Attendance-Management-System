@@ -12,22 +12,24 @@ var StudentSchema = new Schema ({
   lastname: String,
   address: String,
   city: String,
-  dob: Date,
   zipcode: Number,
-  section: {
-    type: String,
-    required: true
-  },
+  phone: Number,
+  email: String,
   id: {
     type: String,
     required: true
   },
-  phone: Number,
-  email: String,
+  dob: Date,
+  section: {
+    type: String,
+    required: true
+  },
+  nickname: String,
+  scholarship: String,
   sex: {
     type: String,
     required: true
-  }
+  },
 
 });
 

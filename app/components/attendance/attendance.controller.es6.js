@@ -2,7 +2,6 @@
 class AttendanceController {
 constructor($filter, AttendanceFactory){
   var vm = this;
-
  // get the days by giving month and year
   vm.getDaysinMonth = function (month, year){
     return new Date(year, month, 0).getDate();
@@ -34,7 +33,6 @@ constructor($filter, AttendanceFactory){
     AttendanceFactory.viewAttendance(vm.month)
       .then(function(response){
           let students = response.data;
-
           students.map(student => {
             return student.presentData.map(s => {
               s.students.day = parseInt(new Date(s.students.date).getDate() - 1);
@@ -42,14 +40,27 @@ constructor($filter, AttendanceFactory){
           });
 
           vm.students = students;
-
           console.log(vm.students);
+
 
       });
 
   };
 
+  vm.open = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
 
+    vm.opened = true;
+  };
+
+  vm.dateOptions = {
+    'year-format': "'yy'",
+    'starting-day': 1
+  };
+
+  vm.formats = ['MMMM-yyyy', 'yyyy/MM', 'shortDate'];
+  vm.format = vm.formats[0];
 
 
  }

@@ -4,7 +4,8 @@ import uiRouter from '@uirouter/angularjs';
 import registerComponent from './register.component.es6';
 
 let registerModule = angular.module('register',[
-  uiRouter
+  uiRouter,
+  'ui.bootstrap'
 ])
 
 

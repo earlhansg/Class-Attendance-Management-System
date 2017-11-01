@@ -1,19 +1,53 @@
 @import "mixins";
+$fontHeader:Josefin Slab;
 $colorWhite:#ffffff;
+
+
+#view-section {
+  margin-top: 45px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $colorWhite;
+  position: relative;
+  width: 850px;
+  height: 600px;
+  font-family: $fontHeader;
+}
+
+#section-body {
+  position: absolute;
+  margin: 35px 0px 0px 35px;
+}
+.section-logo {
+  p {
+    font-size: 20px;
+    color: #4E4D4A;
+    margin-bottom: 7px;
+  }
+  small {
+    font-size: 12px;
+    color: #8c8c8c;
+  }
+}
+
+.custom-border {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 0;
+    width: 760px;
+    border-top: 1px solid #bfbfbf;
+}
+
+#section-data {
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  height: 400px;
+}
+
 #select-section{
-  margin: 20px 0px 20px 27px;
-  @include mQ(768px) {
-  margin-left: 61px;
-  }
-  @include mQ(425px) {
-    margin-left: 64px;
-  }
-  @include mQ(375px) {
-    margin-left: 73px;
-  }
-  @include mQ(320px) {
-    margin-left: 59px;
-  }
+  margin: 40px 0px 20px 0px;
 }
 
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
@@ -23,103 +57,85 @@ $colorWhite:#ffffff;
   border-radius: 0px;
 }
 
-.table-responsive{
-  font-family: sans-serif;
-  border-radius: 0px;
 
-  .table-header{
-    font-weight: 800;
-    font-size: 17px;
-    background-color: #F3615C;
-    text-align: center;
-    color:$colorWhite;
-    @include mQ(425px) {
-      font-weight: 500;
-      font-size: 15px;
-    }
-    @include mQ(375px) {
-      font-weight: 400;
-      font-size: 11px;
-    }
-
-  }
-  .table-body{
-    background-color: #F5F4F8;
-
-  }
+#section-table {
+  margin-top: 25px;
+  position: relative;
 }
 
-.center{
-  text-align: center;
+#table-scroll {
+  height:300px;
+  overflow:auto;
+  margin-top:20px;
 }
-.name-data{
-  margin-left: 20px;
-  font-weight: bolder;
-  font-size: 15px;
-  @include mQ(425px) {
-    font-weight: bold;
-    font-size: 12px;
-  }
-  @include mQ(375px) {
-    margin-left: 0px;
-  }
-  @include mQ(320px) {
-    font-size: 10px;
-  }
-}
-.submit{
-  font-family: sans-serif;
-  margin-left: 11px;
-  font-size: 12px;
-  width: 80px;
-  height: 35px;
-  padding-right: 7px;
-  background-color: #96C164;
-  border-style: none;
-  text-align: center;
-  color:$colorWhite;
-  font-weight: bold;
-  @include mQ(768px) {
-    margin-left: 44px;
-  }
-  @include mQ(425px) {
-    margin-left: 46px;
-  }
-  @include mQ(375px) {
-    margin-left: 56px;
-  }
-  @include mQ(320px) {
-    margin-left: 43px;
-  }
-  .fa-check{
-    font-size: 15px;
-    color:#006600;
-  }
-  &:hover{
-    opacity: 0.7;
-  }
-}
-
-.btn-go {
-  font-family: sans-serif;
-  margin-left: 11px;
-  font-size: 12px;
-  width: 80px;
-  height: 25px;
-  padding-right: 7px;
-  background-color: #96C164;
-  border-style: none;
-  text-align: center;
-  color:$colorWhite;
-  font-weight: bold;
-}
-
 
 .styled-select.slate {
    border: 1px solid #ccc;
    font-size: 14px;
    font-weight: bold;
    height: 25px;
-   width: 50px;
+   width: 55px;
    background: transparent;
+}
+
+.table-border {
+  thead {
+    border: 1px solid #bfbfbf;
+    font-size: 14px;
+    font-weight: bold;
+    tr {
+      th {
+        text-align: center;
+      }
+    }
+  }
+  tbody {
+    text-align: center;
+    font-size: 13px;
+    tr {
+      td {
+        input {
+          margin: 0px;
+        }
+      }
+    }
+
+  }
+}
+
+input, select, textarea{
+    background-color: $colorWhite;
+}
+
+.table th{
+    border: 1px !important;
+}
+
+.btn-go {
+  width: 50px;
+  background-color: #FF8633;
+  height: 24.7px;
+  border-style: none;
+  border-radius: 2px;
+  p {
+    color: $colorWhite;
+    padding: 3px;
+  }
+
+}
+
+.div-button {
+  text-align: center;
+  .btn-submit {
+    width: 150px;
+    height: 30px;
+    padding: 2px;
+    background-color: #FF8633;
+    border-style: none;
+    p {
+      color: $colorWhite;
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
 }

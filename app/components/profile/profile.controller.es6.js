@@ -3,6 +3,7 @@ class ProfileController {
   constructor($state, authFactory){
     console.log('im here in profile');
     var vm = this;
+    // vm.nav = 'visited';
 
     vm.init = function() {
         vm.loggedIn = authFactory.isLoggedIn();
@@ -13,6 +14,10 @@ class ProfileController {
     };
 
     vm.init();
+
+    vm.click = function(element){
+      console.log(element);
+    };
 
   }
 }
