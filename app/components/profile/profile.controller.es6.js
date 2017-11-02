@@ -15,9 +15,6 @@ class ProfileController {
 
     vm.init();
 
-    vm.click = function(element){
-      console.log(element);
-    };
 
   }
 }
