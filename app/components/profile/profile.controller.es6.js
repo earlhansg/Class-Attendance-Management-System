@@ -15,6 +15,9 @@ class ProfileController {
 
     vm.init();
 
+    vm.menu = function(){
+      $state.go('menu');
+    };
 
   }
 }

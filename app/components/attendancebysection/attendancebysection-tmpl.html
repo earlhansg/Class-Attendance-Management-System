@@ -2,13 +2,14 @@
   <header>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
-        <button type="button" class="navbar-toggle no-border" data-toggle="collapse" data-target="#navbar-collapse">
+        <button type="button" class="navbar-toggle no-border"
+                data-toggle="collapse" data-target="#navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <i class="fa fa-clock-o"></i>
+        <i class="fa fa-clock-o logo" ng-click="vm.menu()"></i>
       </div>
     </nav>
   </header>
@@ -23,26 +24,25 @@
       <i class="fa fa-calendar" aria-hidden="true">
         Attendance
       </i>
-      <select class="styled-select slate">
-        <option>R1</option>
-        <option>R2</option>
-        <option>R3</option>
-        <option>R4</option>
-      </select>
 
       <label class="label-title">Data by Month:</label>
       <input type="date"
-             ng-model="" placeholder="Data by Month">
+             ng-model="vm.date" placeholder="Data by Month">
       <button type="button" name="button"
-              ng-click="" class="btn-get">
-              <i class="fa fa-search" aria-hidden="true"></i></button>
+              ng-click="vm.getDate()" class="btn-get">
+              <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+
       <div class="table-attendance table-responsive">
         <table class="table table-border">
           <thead>
               <tr class="row-color">
                 <th class="table-border">Student</th>
-                <th class="table-border">1</th>
-                <th class="table-border">2</th>
+                <th class="table-border"
+                    ng-repeat="days in vm.days">
+                    <span>{{$index+1}}</span>
+                </th>
+                <!-- <th class="table-border">2</th>
                 <th class="table-border">3</th>
                 <th class="table-border">4</th>
                 <th class="table-border">5</th>
@@ -71,109 +71,31 @@
                 <th class="table-border">28</th>
                 <th class="table-border">29</th>
                 <th class="table-border">30</th>
-                <th class="table-border">31</th>
+                <th class="table-border">31</th> -->
 
               </tr>
             </thead>
 
-            <tbody class="body-color">
-              <td class="table-border">
-                <small style="font-size:12px;">Earl Hans</small>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
-              <td class="table-border">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </td>
+            <tbody class="body-color"
+                    ng-repeat="student in vm.students">
+                <tr>
+                    <td class="table-border">
+                      <small style="font-size:12px;">{{student._id}}</small>
+                    </td>
+                    <td class="table-border"
+                        ng-repeat="days in vm.days">
 
+                        <i class="fa fa-check"
+                        ng-repeat="data in student.presentData"
+                        ng-if="(data.students.day == $parent.$index + 1) && data.students.isPresent">
+                        </i>
+                        <i class="fa fa-times"
+                           ng-repeat="data in student.presentData"
+                           ng-if="(data.students.day == $parent.$index + 1) && !data.students.isPresent">
+                        </i>
+
+                    </td>
+                </tr>
             </tbody>
         </table>
       </div>

@@ -58,15 +58,16 @@ class SectionController {
               });
             }
 
-          } else {
-            a.push({
-              _id: s._id,
-              id: s.id,
-              fullName: `${s.firstname} ${s.lastname}`,
-              isPresent: 0,
-              date: date
-            });
           }
+          //  else {
+          //   a.push({
+          //     _id: s._id,
+          //     id: s.id,
+          //     fullName: `${s.firstname} ${s.lastname}`,
+          //     isPresent: 0,
+          //     date: date
+          //   });
+          // }
         });
       });
 
