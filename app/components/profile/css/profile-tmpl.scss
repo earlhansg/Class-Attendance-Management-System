@@ -2,47 +2,6 @@
 $fontHeader:Josefin Slab;
 $colorWhite:#ffffff;
 
-// .icon-bar{
-//     color: $colorWhite;
-//   }//icon-bar
-//
-// .fa-clock-o {
-//     font-size: 30px;
-//     color: $colorWhite;
-//     margin: 10px 0px 0px 5px;
-// }//fa-clock-o
-//
-// .color-header{
-//   background-color:  #0B2140;
-// }//color-header
-//
-// .no-border {
-//   border: none;
-// }//no-border
-//
-// .navbar-fixed-top {
-//     top: 0;
-//     border-width: 0 0 1px;
-// }//navbar-fixed-top
-//
-// #user-profile {
-//   height: 50px;
-//   padding-top: 15px;
-//   padding-left: 58px;
-//   img {
-//     height: 45px;
-//     width: 45px;
-//     position: absolute;
-//     top: 2px;
-//     left: 8px;
-//     padding: 1px;
-//
-//   }
-//   img
-//   .profile-username{
-//     color: $colorWhite;
-//   }
-// }
 #profile-body{
   background-color: #e7e7e7;
 }
@@ -61,13 +20,7 @@ $colorWhite:#ffffff;
 }
 .logo-size{
   text-align: center;
-  font-size: 25px;
-  .user-logo {
-    // margin-right: 20px;
-  }//user-logo
-  .notification-logo {
-    // margin-right: 20px;
-  }//notification-logo
+  font-size: 35px;
 }//logo-size
 
 #wrapper {
@@ -224,85 +177,36 @@ $colorWhite:#ffffff;
 .profile-container{
   height: 100%;
 }
-// .profile-navigation {
-//   border-bottom: 2px solid #e7e7e7;
-// }
-// .profile-container {
-//   margin-top: -19px;
-//   background-color: $colorWhite;
-// }
 
-// .profile-container {
-//   padding-right: 15px;
-//   padding-left: 15px;
-//   margin-top: 20px;
-//   margin-right: auto;
-//   margin-left: auto;
-//   width: 900px;
-//   background-color: $colorWhite;
-// }
-// @media (min-width: 768px) {
-//   .profile-container {
-//     width: 750px;
-//   }
-// }
-// @media (min-width: 992px) {
-//   .profile-container {
-//     width: 970px;
-//   }
-// }
 
-// .table-responsive{
-//   margin-top: 50px;
+// .dropdown-submenu {
+//     position: relative;
+// }
 //
-//   @include mQ(1024px) {
-//    margin-left: 0px;
-//   }
-//   @include mQ(768px) {
-//   margin-left: 50px;
-//   }
-//   @include mQ(425px) {
-//   margin-left: 60px;
-//   width: 80%;
-//   }
-//   @include mQ(375px) {
-//   margin-left: 45px;
-//   width: 85%;
-//   }
-//   @include mQ(320px) {
-//   margin-left: 40px;
-//   width: 85%;
-//   }
-//   .table>thead>tr>th{
-//     @include mQ(375px) {
-//       padding: 2px;
-//       // margin-left: 20px;
-//       width: 83%;
+// .dropdown-menu {
+//   top: 0;
+//   left: 100%;
+//   margin-top: -6px;
+//   margin-left: -1px;
+//   -webkit-border-radius: 0 6px 6px 6px;
+//   -moz-border-radius: 0 6px 6px;
+//   border-radius: 0 6px 6px 6px;
+//   display: block;
+//
+//   a {
+//     &:after {
+//      display: block;
+//      content: " ";
+//      float: right;
+//      width: 0;
+//      height: 0;
+//      border-color: transparent;
+//      border-style: solid;
+//      border-width: 5px 0 5px 5px;
+//      border-left-color: #ccc;
+//      margin-top: 5px;
+//      margin-right: -10px;
+//      border-left-color: #fff;
 //     }
 //   }
-//   .table>thead>tr>th{
-//     @include mQ(325px) {
-//       padding: 0px;
-//
-//     }
-//   }
-//   .table {
-//     width: 85%;
-//
-//     @include mQ(1024px) {
-//      width: 80%;
-//     }
-//
-//     @include mQ(768px) {
-//      width: 100%;
-//     }
-//
-//     @include mQ(425px) {
-//       font-size: 10px;
-//     }
-//   }
-// }//table-responsive
-//
-// .table-border{
-//   border: .5px solid #ddd;
 // }

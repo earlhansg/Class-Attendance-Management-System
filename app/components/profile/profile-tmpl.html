@@ -88,11 +88,15 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <p class="logo-size">
-                    <span class="fa fa-user user-logo"></span>
-                  </p>
-                </a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                             <p class="logo-size">
+                                 <span class="fa fa-user user-logo"></span>
+                             </p>
+                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                               <li><a tabindex="-1" href="#"
+                                      ng-click="vm.logout()">Logout</a></li>
+                             </ul>
+                    </a>
               </li>
           </ul>
       </nav>

@@ -1,6 +1,6 @@
 
 class ProfileController {
-  constructor($state, authFactory){
+  constructor($state, authFactory, $window){
     console.log('im here in profile');
     var vm = this;
     // vm.nav = 'visited';
@@ -17,6 +17,11 @@ class ProfileController {
 
     vm.menu = function(){
       $state.go('menu');
+    };
+    vm.logout = function(){
+      $window.localStorage.clear();
+      $window.location.reload();
+      sessionStorage.clear();
     };
 
   }
