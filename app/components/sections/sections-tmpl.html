@@ -12,9 +12,10 @@
     <div id="section-data" ng-init="vm.isDisable = true">
 
       <div id="select-section">
-        <select class="styled-select slate" ng-model="vm.sectioncode">
-          <option
-          ng-repeat="section in vm.dataSections">{{section.sectioncode}}</option>
+        <select class="styled-select slate"
+                 ng-model="vm.sectioncode"
+                 ng-change="vm.getStudentbySection(vm.sectioncode)">
+          <option ng-repeat="section in vm.dataSections">{{section.sectioncode}}</option>
         </select>
 
         <button class="btn-go"
@@ -38,7 +39,9 @@
               <tr>
                 <td>{{student.firstname}} {{student.lastname}} </td>
                 <td>
-                  <input type="checkbox" ng-model="vm.selectedList[student.id]" ng-value="false"/>
+                  <input type="checkbox"
+                         ng-init="vm.selectedList[student.id] = false"
+                         ng-model="vm.selectedList[student.id]" ng-value="false"/>
                 </td>
               </tr>
             </tbody>

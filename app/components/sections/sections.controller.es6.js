@@ -24,15 +24,16 @@ class SectionController {
         SectionFactory.getStudentbySection(vm.sectioncode)
         .then(function(response){
           vm.studentsbySection =  response.data;
+
         });
     };
 
     vm.checkAttendance = function (){
       const students = [];
-      
+
       for (let key in vm.selectedList) {
        if (vm.selectedList[key]) students.push({ id: key, isPresent: 1 });
-       else students.push({ id: key, isPresent: 0});
+      else students.push({ id: key, isPresent: 0});
       }
 
     const a = [];
@@ -48,7 +49,8 @@ class SectionController {
                 isPresent: 1,
                 date: date
               });
-            } else {
+            }
+            else {
               a.push({
                 _id: s._id,
                 id: s.id,
@@ -57,9 +59,8 @@ class SectionController {
                 date: date
               });
             }
-
           }
-          //  else {
+          // else {
           //   a.push({
           //     _id: s._id,
           //     id: s.id,
@@ -68,16 +69,18 @@ class SectionController {
           //     date: date
           //   });
           // }
+          //
         });
       });
 
 
       var data = {
         // date: new Date(),
-        students: a
+        students : a
       };
       // console.log(students);
       console.log(data);
+
 
       AttendanceFactory.checkAttendance(data)
       .then(function(response){
