@@ -1,13 +1,151 @@
 <div id="profile-register">
+  <div class="container">
+    <div class="register-body">
+      <div class="register-header">
+        <span class="register-icon">
+          <p><i class="fa fa-users"></i> Student: Details</p>
+          <small>Lorem Ipsum és un text de farciment usat per la indústria de la tipografia i la impremta.</small>
+        </span>
+      </div>
+      <!-- end of register-header -->
+      <hr class="student-border">
+
+      <div class="student-icon">
+        <p>
+          <span class="glyphicon glyphicon-user"></span>
+        </p>
+      </div>
+      <!-- end of student-icon -->
+      <div class="student-personalinfo">
+        <h1>Personal Info</h1>
+      </div>
+
+      <div class="registration-form">
+        <form metod="post" ng-submit="vm.doRegister()">
+            <div class="row">
+              <div class="col-md-4 input-info">
+                <input type="text" ng-model="vm.studentData.firstname"
+                       placeholder="Firstname">
+              </div>
+              <div class="col-md-4 input-info">
+                <input type="text" ng-model="vm.studentData.lastname"
+                       placeholder="Lastname">
+              </div>
+            </div>
+            <!-- end of row -->
+            <div class="student-personalinfo">
+              <h1>Address</h1>
+            </div>
+            <div class="row">
+              <div class="col-md-4 input-info">
+                <input type="text" ng-model="vm.studentData.address"
+                       placeholder="Address">
+              </div>
+              <div class="col-md-4 input-info">
+                <input type="text" ng-model="vm.studentData.city"
+                       placeholder="City">
+              </div>
+              <div class="col-md-4 input-info">
+                <input type="text" ng-model="vm.studentData.zipcode"
+                placeholder="Zip Code">
+              </div>
+            </div>
+            <!-- end of row -->
+            <div class="student-personalinfo">
+              <h1>Contact/Website</h1>
+            </div>
+            <div class="row">
+              <div class="col-md-4 input-info">
+                <input type="text" ng-model="vm.studentData.phone"
+                       placeholder="Phone Number">
+              </div>
+              <div class="col-md-4 input-info">
+                <input type="text" ng-model="vm.studentData.email"
+                       placeholder="Email Address">
+              </div>
+              <div class="col-md-4 input-info">
+                <input type="text" ng-model="vm.studentData.id"
+                       placeholder="ID Number">
+              </div>
+            </div>
+
+            <div class="student-personalinfo">
+              <h1>Additional Information</h1>
+            </div>
+            <div class="row">
+              <div class="col-md-4 input-info">
+                <input type="text" datepicker-popup="{{vm.format}}" ng-model="vm.studentData.dob"
+                       is-open="vm.opened" datepicker-options="vm.dateOptions" ng-required="true"
+                       close-text="Close" placeholder="Date of Birth"/>
+                    <i class="glyphicon glyphicon-calendar dob-icon" ng-click="vm.open($event)"></i>
+              </div>
+              <div class="col-md-4 input-info">
+                <input type="text" ng-model="vm.studentData.section"
+                       placeholder="Section">
+              </div>
+              <div class="col-md-4 input-info">
+                <input type="text" ng-model="vm.studentData.nickname"
+                placeholder="Nickname">
+              </div>
+            </div>
+            <!-- end of the row -->
+            <br>
+
+            <div class="student-personalinfo">
+              <h1>Scholarship</h1>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 input-info">
+                <input type="text" ng-model="vm.studentData.scholarship"
+                       placeholder="Type of Scholarship">
+              </div>
+            </div>
+            <!-- end of row -->
+            <br>
+
+            <div class="student-personalinfo">
+              <h1>Gender</h1>
+            </div>
+
+            <div class="row">
+              <div class="radio-item">
+                <input type="radio" id="Male" name="male" ng-model="vm.studentData.sex" value="Male">
+                <label for="Male">Male</label>
+              </div>
+
+              <div class="radio-item">
+                <input type="radio" id="Female" name="female" ng-model="vm.studentData.sex" value="Female">
+                <label for="Female">Female</label>
+              </div>
+            </div>
+            <!-- end of row -->
+            <div class="button-center">
+              <div class="row">
+                 <button type="submit" class="sumbit-button">SAVE</button>
+              </div>
+            </div>
+        </form>
+      </div>
+      <!-- end of registration-form -->
+    </div>
+    <!-- end of register-body -->
+  </div>
+  <!-- end of container -->
+</div>
+<!-- end of profile-register -->
+
+
+<!-- <div id="profile-register">
 
 <div class="register-body">
   <div class="register-header">
     <span class="register-icon">
       <p><i class="fa fa-users"></i> Student: Details</p>
       <small>Lorem Ipsum és un text de farciment usat per la indústria de la tipografia i la impremta.</small>
-    </span>
+    </span> -->
     <!-- <h1 class="register-h1">Student: Details</h1> -->
-  </div>
+  <!-- </div>
   <hr class="custom-border">
   <div class="student-icon">
     <p>
@@ -70,9 +208,9 @@
         <h1>Additional Information</h1>
       </div>
       <div class="row">
-        <div class="col-md-4 input-info">
+        <div class="col-md-4 input-info"> -->
           <!-- <input type="text" placeholder="Date of Birth"> -->
-          <input type="text" datepicker-popup="{{vm.format}}" ng-model="vm.studentData.dob"
+          <!-- <input type="text" datepicker-popup="{{vm.format}}" ng-model="vm.studentData.dob"
                  is-open="vm.opened" datepicker-options="vm.dateOptions" ng-required="true"
                  close-text="Close" placeholder="Date of Birth"/>
               <i class="glyphicon glyphicon-calendar dob-icon" ng-click="vm.open($event)"></i>
@@ -121,4 +259,4 @@
       </div>
     </form>
   </div>
-</div>
+</div> -->

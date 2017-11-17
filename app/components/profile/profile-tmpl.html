@@ -1,81 +1,202 @@
-
 <div id="profile-body">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-lg-2">
+
+          <div id="wrapper">
+
+            <div id="sidebar-wrapper">
+                <aside id="sidebar">
+                    <ul id="sidemenu" class="sidebar-nav">
+
+                      <div class="admin">
+                          <p class="admin-logo">
+                            <span class="fa fa-user-circle"></span>
+                          </p>
+                          <h1>Admin</h1>
+                      </div>
+                      <hr>
+                        <li ng-init="HomeisActive = true" ng-class="{ visited: HomeisActive }"
+                            ng-click="HomeisActive ? HomeisActive = false : HomeisActive = true; ClassisActive = false;
+                            RegisterisActive = false; ViewisActive = false; viewSection = false; addSection = false;
+                             ">
+                            <a ui-sref=".home">
+                                <span class="sidebar-icon"><i class="glyphicon glyphicon-home"></i></span>
+                                <span class="sidebar-title">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
+                                <span class="sidebar-icon"><i class="fa fa-users"></i></span>
+                                <span class="sidebar-title">Student</span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul id="submenu-2" class="panel-collapse collapse panel-switch" role="menu">
+                                <li ui-sref=".register"
+                                    ng-init="RegisterisActive = false" ng-class="{ visited: RegisterisActive }"
+                                    ng-click="RegisterisActive ? RegisterisActive = false : RegisterisActive = true; HomeisActive = false;
+                                    ClassisActive = false; ViewisActive = false; viewSection = false; addSection = false;">
+                                    <a href=""><i class="fa fa-caret-right"></i>Add Student</a></li>
+                                <li ui-sref=".student"
+                                    ng-init="ViewisActive = false" ng-class="{ visited: ViewisActive }"
+                                    ng-click="ViewisActive ? ViewisActive = false : ViewisActive = true; HomeisActive = false;
+                                    ClassisActive = false; RegisterisActive = false; viewSection = false; addSection = false; ">
+                                    <a href=""><i class="fa fa-caret-right"></i>View Student</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-3">
+                                <span class="sidebar-icon"><i class="glyphicon glyphicon-th-list"></i></span>
+                                <span class="sidebar-title">Section</span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul id="submenu-3" class="panel-collapse collapse panel-switch" role="menu">
+                                <li ui-sref=".section"
+                                ng-init="viewSection = false" ng-class="{ visited: viewSection }"
+                                ng-click="viewSection ? viewSection = false : viewSection = true; HomeisActive = false;
+                                ClassisActive = false; ViewActive = false; RegisterisActive = false; addSection = false;
+                                ViewisActive = false; RegisterisActive = false;">
+                                  <a href="#"><i class="fa fa-caret-right"></i>View Section</a></li>
+                                <li ui-sref=".section-add"
+                                    ng-init="addSection = false" ng-class="{ visited: addSection }"
+                                    ng-click="addSection ? addSection = false : addSection = true; HomeisActive = false;
+                                    ClassisActive = false; ViewActive = false; RegisterisActive = false; viewSection = false;
+                                    ViewisActive = false; RegisterisActive = false;">
+                                <a href="#"><i class="fa fa-caret-right"></i>Add Section</a></li>
+                            </ul>
+                        </li>
+                        <li ng-init="ClassisActive = false" ng-class="{ visited: ClassisActive }"
+                            ng-click="ClassisActive ? ClassisActive = false : ClassisActive = true; HomeisActive = false;
+                            RegisterisActive = false; ViewisActive = false; viewSection = false; addSection = false;">
+                            <a ui-sref=".attendance">
+                                <span class="sidebar-icon"><i class="glyphicon glyphicon-list-alt"></i></span>
+                                <span class="sidebar-title"> Class Attendance</span>
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- end of sidebar-wrapper -->
+          </div>
+          <!-- end of wrapper -->
+
+      </div>
+      <!-- end col-lg-2 -->
+
+      <div class="col-lg-10 no-padding">
+        <nav class="navbar navbar-default navigation-custom">
+
+          <ul class="nav navbar-nav navbar-right">
+            <a class="nav-bars dropdown-toggle" data-toggle="dropdown" href="#">
+              <!-- <li class="nav-item"> -->
+                <p>
+                  <span class="fa fa-bars"></span>
+                </p>
+
+                <ul class="dropdown-menu no-padding" role="menu">
+                    <li><a tabindex="-1" href="#"
+                           ng-click="vm.logout()">Logout</a></li>
+                </ul>
+              <!-- </li> -->
+            </a>
+          </ul>
+        </nav>
+
+        <div class="container">
+            <ui-view></ui-view>
+        </div>
+
+      </div>
+      <!-- end of col-lg-10 -->
+
+    </div>
+    <!-- end of row -->
+  </div>
+  <!-- end of container-fluid -->
+</div>
+<!-- end of profile-body -->
+
+
+
+
+
+<!-- <div id="profile-body">
 
   <div id="wrapper">
+              <div id="sidebar-wrapper">
 
-          <div id="sidebar-wrapper">
+                  <aside id="sidebar">
 
-              <aside id="sidebar">
+                      <ul id="sidemenu" class="sidebar-nav">
 
-                  <ul id="sidemenu" class="sidebar-nav">
-
-                    <div class="admin">
-                        <p class="admin-logo">
-                          <span class="fa fa-user-circle"></span>
-                        </p>
-                        <h1>Admin</h1>
-                    </div>
-                    <hr>
-                      <li ng-init="HomeisActive = true" ng-class="{ visited: HomeisActive }"
-                          ng-click="HomeisActive ? HomeisActive = false : HomeisActive = true; ClassisActive = false;
-                          RegisterisActive = false; ViewisActive = false; viewSection = false; addSection = false;
-                           ">
-                          <a ui-sref=".home">
-                              <span class="sidebar-icon"><i class="glyphicon glyphicon-home"></i></span>
-                              <span class="sidebar-title">Home</span>
-                          </a>
-                      </li>
-                      <li>
-                          <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
-                              <span class="sidebar-icon"><i class="fa fa-users"></i></span>
-                              <span class="sidebar-title">Student</span>
-                              <b class="caret"></b>
-                          </a>
-                          <ul id="submenu-2" class="panel-collapse collapse panel-switch" role="menu">
-                              <li ui-sref=".register"
-                                  ng-init="RegisterisActive = false" ng-class="{ visited: RegisterisActive }"
-                                  ng-click="RegisterisActive ? RegisterisActive = false : RegisterisActive = true; HomeisActive = false;
-                                  ClassisActive = false; ViewisActive = false; viewSection = false; addSection = false;">
-                                  <a href=""><i class="fa fa-caret-right"></i>Add Student</a></li>
-                              <li ui-sref=".student"
-                                  ng-init="ViewisActive = false" ng-class="{ visited: ViewisActive }"
-                                  ng-click="ViewisActive ? ViewisActive = false : ViewisActive = true; HomeisActive = false;
-                                  ClassisActive = false; RegisterisActive = false; viewSection = false; addSection = false; ">
-                                  <a href=""><i class="fa fa-caret-right"></i>View Student</a></li>
-                          </ul>
-                      </li>
-                      <li>
-                          <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-3">
-                              <span class="sidebar-icon"><i class="glyphicon glyphicon-th-list"></i></span>
-                              <span class="sidebar-title">Section</span>
-                              <b class="caret"></b>
-                          </a>
-                          <ul id="submenu-3" class="panel-collapse collapse panel-switch" role="menu">
-                              <li ui-sref=".section"
-                              ng-init="viewSection = false" ng-class="{ visited: viewSection }"
-                              ng-click="viewSection ? viewSection = false : viewSection = true; HomeisActive = false;
-                              ClassisActive = false; ViewActive = false; RegisterisActive = false; addSection = false;
-                              ViewisActive = false; RegisterisActive = false;">
-                                <a href="#"><i class="fa fa-caret-right"></i>View Section</a></li>
-                              <li ui-sref=".section-add"
-                                  ng-init="addSection = false" ng-class="{ visited: addSection }"
-                                  ng-click="addSection ? addSection = false : addSection = true; HomeisActive = false;
-                                  ClassisActive = false; ViewActive = false; RegisterisActive = false; viewSection = false;
+                        <div class="admin">
+                            <p class="admin-logo">
+                              <span class="fa fa-user-circle"></span>
+                            </p>
+                            <h1>Admin</h1>
+                        </div>
+                        <hr>
+                          <li ng-init="HomeisActive = true" ng-class="{ visited: HomeisActive }"
+                              ng-click="HomeisActive ? HomeisActive = false : HomeisActive = true; ClassisActive = false;
+                              RegisterisActive = false; ViewisActive = false; viewSection = false; addSection = false;
+                               ">
+                              <a ui-sref=".home">
+                                  <span class="sidebar-icon"><i class="glyphicon glyphicon-home"></i></span>
+                                  <span class="sidebar-title">Home</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
+                                  <span class="sidebar-icon"><i class="fa fa-users"></i></span>
+                                  <span class="sidebar-title">Student</span>
+                                  <b class="caret"></b>
+                              </a>
+                              <ul id="submenu-2" class="panel-collapse collapse panel-switch" role="menu">
+                                  <li ui-sref=".register"
+                                      ng-init="RegisterisActive = false" ng-class="{ visited: RegisterisActive }"
+                                      ng-click="RegisterisActive ? RegisterisActive = false : RegisterisActive = true; HomeisActive = false;
+                                      ClassisActive = false; ViewisActive = false; viewSection = false; addSection = false;">
+                                      <a href=""><i class="fa fa-caret-right"></i>Add Student</a></li>
+                                  <li ui-sref=".student"
+                                      ng-init="ViewisActive = false" ng-class="{ visited: ViewisActive }"
+                                      ng-click="ViewisActive ? ViewisActive = false : ViewisActive = true; HomeisActive = false;
+                                      ClassisActive = false; RegisterisActive = false; viewSection = false; addSection = false; ">
+                                      <a href=""><i class="fa fa-caret-right"></i>View Student</a></li>
+                              </ul>
+                          </li>
+                          <li>
+                              <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-3">
+                                  <span class="sidebar-icon"><i class="glyphicon glyphicon-th-list"></i></span>
+                                  <span class="sidebar-title">Section</span>
+                                  <b class="caret"></b>
+                              </a>
+                              <ul id="submenu-3" class="panel-collapse collapse panel-switch" role="menu">
+                                  <li ui-sref=".section"
+                                  ng-init="viewSection = false" ng-class="{ visited: viewSection }"
+                                  ng-click="viewSection ? viewSection = false : viewSection = true; HomeisActive = false;
+                                  ClassisActive = false; ViewActive = false; RegisterisActive = false; addSection = false;
                                   ViewisActive = false; RegisterisActive = false;">
-                              <a href="#"><i class="fa fa-caret-right"></i>Add Section</a></li>
-                          </ul>
-                      </li>
-                      <li ng-init="ClassisActive = false" ng-class="{ visited: ClassisActive }"
-                          ng-click="ClassisActive ? ClassisActive = false : ClassisActive = true; HomeisActive = false;
-                          RegisterisActive = false; ViewisActive = false; viewSection = false; addSection = false;">
-                          <a ui-sref=".attendance">
-                              <span class="sidebar-icon"><i class="glyphicon glyphicon-list-alt"></i></span>
-                              <span class="sidebar-title"> Class Attendance</span>
-                          </a>
-                      </li>
-                  </ul>
-              </aside>
-          </div>
+                                    <a href="#"><i class="fa fa-caret-right"></i>View Section</a></li>
+                                  <li ui-sref=".section-add"
+                                      ng-init="addSection = false" ng-class="{ visited: addSection }"
+                                      ng-click="addSection ? addSection = false : addSection = true; HomeisActive = false;
+                                      ClassisActive = false; ViewActive = false; RegisterisActive = false; viewSection = false;
+                                      ViewisActive = false; RegisterisActive = false;">
+                                  <a href="#"><i class="fa fa-caret-right"></i>Add Section</a></li>
+                              </ul>
+                          </li>
+                          <li ng-init="ClassisActive = false" ng-class="{ visited: ClassisActive }"
+                              ng-click="ClassisActive ? ClassisActive = false : ClassisActive = true; HomeisActive = false;
+                              RegisterisActive = false; ViewisActive = false; viewSection = false; addSection = false;">
+                              <a ui-sref=".attendance">
+                                  <span class="sidebar-icon"><i class="glyphicon glyphicon-list-alt"></i></span>
+                                  <span class="sidebar-title"> Class Attendance</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </aside>
+        </div>
 
   <div id="profile-navigation">
       <nav class="navbar navbar-default navigation-color">
@@ -103,7 +224,7 @@
   </div>
 
 <div class="profile-container">
-  <ui-view></ui-view>
+    <ui-view></ui-view>
 </div>
 
-</div>
+</div> -->

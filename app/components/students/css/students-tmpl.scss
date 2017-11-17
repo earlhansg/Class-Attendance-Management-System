@@ -4,37 +4,83 @@ $colorWhite:#ffffff;
 
 
 #students-view {
-  margin-top: 45px;
+  margin-left: 80px;
   margin-bottom: 100px;
-  margin-left: auto;
-  margin-right: auto;
   background-color: $colorWhite;
   position: relative;
   width: 850px;
   height: 600px;
   font-family: $fontHeader;
+
+  @media (max-width: 1024px) {
+          width: 700px;
+          margin-left: 220px;
+  }
+  @media (max-width: 768px) {
+          margin-left: 30px;
+  }
+
+  @media (max-width: 425px) {
+          width: 379px;
+  }
+  @media (max-width: 375px) {
+          width: 330px;
+  }
+  @media (max-width: 320px) {
+          width: 275px;
+  }
 }
 .students-body {
   position: absolute;
   margin: 35px 0px 0px 35px;
 }
 .students-logo {
+  margin-top: 15px;
+  @media (max-width: 425px) {
+          margin-left: -15px;
+  }
+  @media (max-width: 375px) {
+          margin-left: -30px;
+  }
+
   p {
     font-size: 20px;
     color: #4E4D4A;
     margin-bottom: 7px;
+
+    @media (max-width: 425px) {
+            font-size: 15px;
+    }
   }
   small {
     font-size: 12px;
     color: #8c8c8c;
+    @media (max-width: 425px) {
+            font-size: 8px;
+    }
   }
 }
-.custom-border {
+.view-border {
     margin-top: 10px;
     margin-bottom: 20px;
     border: 0;
     width: 760px;
     border-top: 1px solid #bfbfbf;
+    @media (max-width: 1024px) {
+            width: 598px;
+    }
+
+    @media (max-width: 425px) {
+            width: 330px;
+            margin-left: -15px;
+    }
+    @media (max-width: 375px) {
+            width: 300px;
+            margin-left: -30px;
+    }
+    @media (max-width: 320px) {
+            width: 250px;
+    }
 }
 
 #student-data {
@@ -42,12 +88,21 @@ $colorWhite:#ffffff;
   margin-right: auto;
   width: 600px;
   height: 400px;
+
 }
 
 
 #custom-search{
   padding: 0;
   margin-top: 35px;
+
+  @media (max-width: 425px) {
+          margin-left: -15px;
+  }
+
+  @media (max-width: 375px) {
+          margin-left: -30px;
+  }
 
   div{
     input {
@@ -75,8 +130,20 @@ $colorWhite:#ffffff;
 
 #student-table{
   margin-top: 25px;
+
   // color: #353432;
   position: relative;
+  @media (max-width: 425px) {
+          width: 325px;
+          margin-left: -15px;
+  }
+  @media (max-width: 375px) {
+          width: 300px;
+          margin-left: -30px;
+  }
+  @media (max-width: 320px) {
+          width: 250px;
+  }
 }
 
 #table-scroll {
